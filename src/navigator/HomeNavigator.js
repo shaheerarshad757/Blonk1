@@ -1,28 +1,10 @@
-import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import React from 'react';
 import {Image} from 'react-native';
-import {createStackNavigator} from 'react-navigation-stack';
 import Login from './src/screens/Login/login-screen';
 import Dashboard from './src/screens/Dashboard/Dashboard';
 import ResetPassword from './src/screens/reset-password/ResetPassword';
 
-const navigator = createStackNavigator(
-  {
-    Login: Login,
-    Dashboard: Dashboard,
-    ResetPassword: ResetPassword,
-  },
-  {
-    initialRouteName: 'Login',
-    defaultNavigationOptions: {
-      //title: 'App',
-      headerShown: false,
-    },
-  },
-);
-
-const MainApp = createBottomTabNavigator(
+const HomeNavigator = createBottomTabNavigator(
   {
     Home: Login,
     Settings: ResetPassword,
@@ -63,4 +45,4 @@ const MainApp = createBottomTabNavigator(
   },
 );
 
-export default createAppContainer(MainApp, navigator);
+export {HomeNavigator};
