@@ -5,11 +5,8 @@ import {BoxedCheckbox, Header} from '@components';
 
 import styles from './Dashboard.style';
 
-const Dashboard: (props) => React$Node = props => {
-  return (
-    <Header />
-    
-  );
+const Dashboard: props => React$Node = props => {
+  return <Header />;
 };
 
 export default Dashboard;

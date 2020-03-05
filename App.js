@@ -9,7 +9,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App: () => React$Node = () => {
   return (
     <SafeAreaProvider>
-      <RootStack/>
+      <RootStack />
     </SafeAreaProvider>
   );
 };

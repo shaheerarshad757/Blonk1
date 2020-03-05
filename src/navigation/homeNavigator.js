@@ -2,6 +2,9 @@ import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {TabBarIcon} from '@components';
 import Dashboard from '../screens/Dashboard/Dashboard';
+import Insights from '../screens/Insights/Insights';
+import Reviews from '../screens/Reviews/Reviews';
+import Social from '../screens/Social/Social';
 
 const HomeNavigator = createBottomTabNavigator(
   {
@@ -9,6 +12,24 @@ const HomeNavigator = createBottomTabNavigator(
       screen: Dashboard,
       navigationOptions: {
         tabBarIcon: props => <TabBarIcon {...props} name="dashboard" />,
+      },
+    },
+    Insights: {
+      screen: Insights,
+      navigationOptions: {
+        tabBarIcon: props => <TabBarIcon {...props} name="insights" />,
+      },
+    },
+    Reviews: {
+      screen: Reviews,
+      navigationOptions: {
+        tabBarIcon: props => <TabBarIcon {...props} name="reviews" />,
+      },
+    },
+    Social: {
+      screen: Social,
+      navigationOptions: {
+        tabBarIcon: props => <TabBarIcon {...props} name="social" />,
       },
     },
   },

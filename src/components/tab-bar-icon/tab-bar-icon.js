@@ -10,19 +10,19 @@ const TabBarIcon: () => React$Node = props => {
         : require('../../assets/home_icon.png');
       break;
 
-    case 'universities':
-      iconPath = props.focused ? require('../../assets/logo-sign-in.png')
-        : require('../../assets/logo-sign-in.png');
+    case 'insights':
+      iconPath = props.focused ? require('../../assets/settings_icon.png')
+        : require('../../assets/settings_icon.png');
       break;
 
-    case 'profile':
-      iconPath = props.focused   ? require('../../assets/logo-sign-in.png')
-        : require('../../assets/logo-sign-in.png');
+    case 'reviews':
+      iconPath = props.focused   ? require('../../assets/settings_icon.png')
+        : require('../../assets/settings_icon.png');
       break;
 
-    case 'lists':
-      iconPath = props.focused   ? require('../../assets/logo-sign-in.png')
-        : require('../../assets/logo-sign-in.png');
+    case 'social':
+      iconPath = props.focused   ? require('../../assets/home_icon.png')
+        : require('../../assets/home_icon.png');
       break;
   }
 
