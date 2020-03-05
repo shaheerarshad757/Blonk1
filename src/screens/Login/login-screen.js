@@ -11,15 +11,15 @@ import {BoxedCheckbox} from '@components';
 
 import styles from './login-screen.style';
 
-const Login: (props) => React$Node = props => {
+const Login: props => React$Node = props => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.titleTopSpace} />
       <View style={styles.logo}>
-      <Image
-        resizeMode="contain"
-        source={require('../../assets/logo-sign-in.png')}
-      />
+        <Image
+          resizeMode="contain"
+          source={require('../../assets/logo-sign-in.png')}
+        />
       </View>
       <View style={styles.titleBottomSpace} />
       <Text scale style={styles.slogan}>
@@ -43,12 +43,17 @@ const Login: (props) => React$Node = props => {
           />
         </View>
         <TouchableOpacity
-          onPress={() => {props.navigation.navigate('Dashboard')}}>
+          onPress={() => {
+            props.navigation.navigate('Dashboard');
+          }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Login</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {props.navigation.navigate('ResetPassword')}}>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate('ResetPassword');
+          }}>
           <View style={{marginTop: 26}} />
           <Text style={styles.linkStyle}>Forgot Password ? </Text>
         </TouchableOpacity>
