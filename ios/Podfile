@@ -39,6 +39,8 @@ target 'jump' do
 
 
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
   target 'jumpTests' do
     inherit! :search_paths
     # Pods for testing

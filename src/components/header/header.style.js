@@ -1,8 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: screenWidth,
+    height: 125,
   },
   options: {
     marginLeft: 20,
@@ -30,6 +32,9 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 1,
     marginTop: 15,
+    flexDirection: 'row',
+    flex: 1,
+    //backgroundColor: 'green',
   },
   TopNavigator: {
     flex: 0,

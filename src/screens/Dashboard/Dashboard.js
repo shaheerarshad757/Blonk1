@@ -1,12 +1,15 @@
 import React from 'react';
-import {SafeAreaView, View, Text, TouchableOpacity} from 'react-native';
+import {SafeAreaView, ImageBackground} from 'react-native';
 import {BoxedCheckbox, Header} from '@components';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import styles from './Dashboard.style';
 
 const Dashboard: (props) => React$Node = props => {
-  return <Header />;
+  return (
+    <Header />
+    
+  );
 };
 
 export default Dashboard;

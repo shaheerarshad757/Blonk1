@@ -32,6 +32,7 @@ const Header: (props) => React$Node = props => {
         <View style={styles.TopNavigator}>
           <TouchableOpacity onPress={() => {}}>
             <Text style={{fontSize: 12}}>OVERVIEW</Text>
+            <View style={{borderWidth: 1, marginTop:10}}/>
           </TouchableOpacity>
           <View style={{marginLeft: 60}} />
           <TouchableOpacity onPress={() => {}}>
