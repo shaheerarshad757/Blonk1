@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-start',
     marginLeft: 65,
-    marginTop: 20,
+    marginTop: '3%',
     //backgroundColor: "black"
   },
   button: {

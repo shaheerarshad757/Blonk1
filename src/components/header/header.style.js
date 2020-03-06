@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   headerButtons: {
     borderColor: 'rgb(91, 192, 190)',
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     padding: 10,
   },
   headerButtonText: {

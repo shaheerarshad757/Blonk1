@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  KeyboardAvoidingView,
 } from 'react-native';
 import {BoxedCheckbox} from '@components';
 
@@ -28,7 +29,10 @@ const Login: props => React$Node = props => {
 
       <View style={styles.formTopSpace} />
 
-      <View style={styles.formContainer}>
+      <KeyboardAvoidingView
+        style={styles.formContainer}
+        behavior="padding"
+        enabled>
         <TextInput style={styles.Field} placeholder="Email" />
         <TextInput
           style={styles.FieldPassword}
@@ -57,7 +61,7 @@ const Login: props => React$Node = props => {
           <View style={{marginTop: 20}} />
           <Text style={styles.linkStyle}>Forgot Password ? </Text>
         </TouchableOpacity>
-      </View>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };

@@ -13,7 +13,7 @@ import styles from './ResetPassword.style';
 
 const ResetPassword: (props) => React$Node = props => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.titleTopSpace} />
       <View style={styles.logo}>
       <Image

@@ -2,24 +2,19 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   titleTopSpace: {
-    height: 158,
+    //flex: 1,
+    height: '15%'
   },
   titleBottomSpace: {
-    height: 33,
-  },
-  breifingBottomSpace: {
-    height: 15,
+    height: '3%',
+    //backgroundColor: 'green',
   },
   logo: {
-    marginLeft: 60,
-  },
-  title: {
-    fontSize: 110,
-    letterSpacing: 3,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: '#666666',
+    marginLeft: screenWidth / 2 - 150,
   },
   slogan: {
     fontSize: 16,
@@ -29,14 +24,13 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
   formTopSpace: {
-    height: '5%',
+    height: '3%',
   },
   formContainer: {
     alignItems: 'center',
   },
   Field: {
-    height: 42,
-    //width: 344,
+    height: '20%',
     width: screenWidth - 70,
     padding: 10,
     paddingLeft: 24,
@@ -49,29 +43,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.45,
     shadowRadius: 1.5,
     elevation: 1,
-  },
-  FieldPassword: {
-    height: 42,
-    //width: 344,
-    width: screenWidth - 70,
-    padding: 10,
-    paddingLeft: 24,
-    //marginBottom: 38,
-    borderWidth: 0.3,
-    borderRadius: 20,
-    borderColor: 'rgb(170 ,169, 169)',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.45,
-    shadowRadius: 1.5,
-    elevation: 1,
-  },
-  checkbox: {
-    flexDirection: 'row',
-    alignSelf: 'flex-start',
-    marginLeft: 65,
-    marginTop: 20,
-    //backgroundColor: "black"
   },
   button: {
     backgroundColor: 'rgb( 91 ,192, 190)',
