@@ -54,7 +54,7 @@ const Login: props => React$Node = props => {
           onPress={() => {
             props.navigation.navigate('ResetPassword');
           }}>
-          <View style={{marginTop: 26}} />
+          <View style={{marginTop: 20}} />
           <Text style={styles.linkStyle}>Forgot Password ? </Text>
         </TouchableOpacity>
       </View>

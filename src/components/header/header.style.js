@@ -1,10 +1,11 @@
 import {StyleSheet, Dimensions} from 'react-native';
-const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
+const {width: screenWidth} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     width: screenWidth,
-    height: 125,
+    height: screenWidth / 4 - 20,
+    //backgroundColor: 'yellow',
   },
   options: {
     marginLeft: 20,
@@ -13,10 +14,10 @@ const styles = StyleSheet.create({
   headerTitle: {
     textAlign: 'center',
     fontWeight: 'bold',
-    marginLeft: 99,
+    marginLeft: screenWidth / 2 - 120,
     marginTop: 10,
     fontSize: 18,
-    letterSpacing: 1,
+    letterSpacing: 1.5,
     color: 'rgb( 20, 20, 20)',
   },
   arrowDown: {
@@ -31,16 +32,29 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 2,
     elevation: 1,
-    marginTop: 15,
+    marginTop: 0,
     flexDirection: 'row',
-    flex: 1,
+    //backgroundColor: 'yellow',
+    //flex: 1,
     //backgroundColor: 'green',
   },
   TopNavigator: {
-    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 10,
+    //backgroundColor: 'green'
+  },
+  headerButtons: {
+    borderColor: 'rgb(91, 192, 190)',
+    borderBottomWidth: 1,
+    padding: 10,
+  },
+  headerButtonText: {
+    fontSize: 12,
+    color: 'rgb(91, 192, 190)',
+  },
+  headerButtonsSpace: {
+    marginLeft: 60,
   },
 });
 

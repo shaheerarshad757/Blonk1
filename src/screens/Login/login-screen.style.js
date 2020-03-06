@@ -3,23 +3,15 @@ const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   titleTopSpace: {
-    height: 158,
+    flex: 1,
+    //backgroundColor: 'green',
+    //marginTop: screenWidth / 4 - 60,
   },
   titleBottomSpace: {
-    height: 33,
-  },
-  breifingBottomSpace: {
-    height: 15,
+    height: '3%',
   },
   logo: {
-    marginLeft: 60,
-  },
-  title: {
-    fontSize: 110,
-    letterSpacing: 3,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: '#666666',
+    marginLeft: screenWidth / 2 - 150,
   },
   slogan: {
     fontSize: 16,
@@ -29,18 +21,17 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
   formTopSpace: {
-    height: '5%',
+    height: '3%',
   },
   formContainer: {
     alignItems: 'center',
   },
   Field: {
-    height: 42,
-    //width: 344,
+    height: '12%',
     width: screenWidth - 70,
     padding: 10,
     paddingLeft: 24,
-    marginBottom: 38,
+    //marginBottom: 38,
     borderWidth: 0.3,
     borderRadius: 20,
     borderColor: 'rgb(170 ,169, 169)',
@@ -51,12 +42,11 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   FieldPassword: {
-    height: 42,
-    //width: 344,
+    height: '12%',
     width: screenWidth - 70,
     padding: 10,
     paddingLeft: 24,
-    //marginBottom: 38,
+    marginTop: '6%',
     borderWidth: 0.3,
     borderRadius: 20,
     borderColor: 'rgb(170 ,169, 169)',

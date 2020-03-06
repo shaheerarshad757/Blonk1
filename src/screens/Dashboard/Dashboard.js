@@ -6,7 +6,11 @@ import {BoxedCheckbox, Header} from '@components';
 import styles from './Dashboard.style';
 
 const Dashboard: props => React$Node = props => {
-  return <Header />;
+  return (
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <Header />
+    </SafeAreaView>
+  );
 };
 
 export default Dashboard;
