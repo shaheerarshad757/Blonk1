@@ -1,6 +1,6 @@
 import {createStackNavigator} from 'react-navigation-stack';
-import ResetPassword from '../screens/reset-password/ResetPassword';
-import Login from '../screens/Login/login-screen';
+import ResetPassword from '../screens/reset-password';
+import Login from '../screens/Login';
 
 const AuthStack = createStackNavigator(
   {

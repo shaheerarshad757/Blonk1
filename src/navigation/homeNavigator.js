@@ -1,10 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import {TabBarIcon} from '@components';
 import Dashboard from '../screens/Dashboard/Dashboard';
 import Insights from '../screens/Insights/Insights';
 import Reviews from '../screens/Reviews/Reviews';
 import Social from '../screens/Social/Social';
+import About from '../screens/About';
+import Home from '../screens/Home';
 
 const HomeNavigator = createBottomTabNavigator(
   {
@@ -47,6 +50,20 @@ const HomeNavigator = createBottomTabNavigator(
         elevation: 15,
       },
     },
+  },
+);
+
+export const Drawer = createDrawerNavigator(
+  {
+    HomeScreen: Home,
+    AboutScreen: About,
+  },
+  {
+    drawerWidth: 250,
+    drawerPosition: 'left',
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
   },
 );
 
