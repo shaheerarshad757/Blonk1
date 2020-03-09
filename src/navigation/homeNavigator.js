@@ -1,4 +1,5 @@
 import React from 'react';
+import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {TabBarIcon} from '@components';
@@ -53,18 +54,35 @@ const HomeNavigator = createBottomTabNavigator(
   },
 );
 
-export const Drawer = createDrawerNavigator(
+const DrawerNavigation = createDrawerNavigator(
   {
     HomeScreen: Home,
     AboutScreen: About,
   },
+  {},
+  // {
+  //   //For the Custom sidebar menu we have to provide our CustomSidebarMenu
+  // contentComponent: CustomSidebarMenu,
+  //   //Sidebar width
+  //   drawerWidth: 300,
+  // },
+);
+
+const HomeStackNavigator = createStackNavigator(
   {
-    drawerWidth: 250,
-    drawerPosition: 'left',
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
+    HomeStack: {screen: HomeNavigator},
+    Drawer: {screen: DrawerNavigation},
+  },
+  {
+    initialRouteName: 'HomeStack',
+    headerMode: 'none',
+    defaultNavigationOptions: {
+      cardStyle: {
+        backgroundColor: 'transparent',
+        cardOverlayEnabled: 'true',
+      },
+    },
   },
 );
 
-export {HomeNavigator};
+export {HomeStackNavigator};

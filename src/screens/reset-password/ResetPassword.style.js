@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
   logo: {
     marginLeft: screenWidth / 2 - 150,
   },
+  options: {
+    marginLeft: '4%',
+    marginTop: '2%',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   slogan: {
     fontSize: 16,
     // fontFamily:'SF Pro Text Medium',

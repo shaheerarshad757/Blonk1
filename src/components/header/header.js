@@ -6,42 +6,57 @@ import styles from './header.style';
 const Header: props => React$Node = props => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 1}}>
+      <View>
         <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity onPress={() => {}}>
-            <Icon
-              name={'bars'}
-              size={21}
-              solid
-              color={'rgb( 20, 20, 20)'}
-              style={styles.options}
-            />
-          </TouchableOpacity>
+          {props.leftIconName ? (
+            <TouchableOpacity
+              onPress={() =>
+                props.onLeftButtonPress && props.onLeftButtonPress()
+              }>
+              <Icon
+                name={props.leftIconName}
+                size={21}
+                color={'rgb( 20, 20, 20)'}
+                style={styles.options}
+              />
+            </TouchableOpacity>
+          ) : null}
 
-          <Text style={styles.headerTitle}>Roxberry Juice</Text>
-          <TouchableOpacity>
-            <Icon
-              name={'sort-down'}
-              size={21}
-              solid
-              color={'rgb( 20, 20, 20)'}
-              style={styles.arrowDown}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.TopNavigator}>
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>OVERVIEW</Text>
+          {props.title ? (
+            <Text style={styles.headerTitle}>{props.title}</Text>
+          ) : null}
+          {props.titleDropDown ? (
+            <TouchableOpacity
+              onPress={() =>
+                props.onDropDownButtonPress && props.onDropDownButtonPress()
+              }>
+              <Icon
+                name={'sort-down'}
+                size={21}
+                solid
+                color={'rgb( 20, 20, 20)'}
+                style={styles.arrowDown}
+              />
             </TouchableOpacity>
-          </View>
-          <View style={styles.headerButtonsSpace} />
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>DIRECTORIES</Text>
-            </TouchableOpacity>
-          </View>
+          ) : null}
         </View>
+        {props.TopNavigator ? (
+          <View style={styles.TopNavigator}>
+            <View style={styles.headerButtons}>
+              <TouchableOpacity onPress={() => {}}>
+                <Text style={styles.headerButtonText}>OVERVIEW</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.headerButtonsSpace} />
+            <View style={styles.headerButtons}>
+              <TouchableOpacity onPress={() => {}}>
+                <Text style={styles.headerButtonText}>DIRECTORIES</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        ) : (
+          <View style={{marginBottom: 20}} />
+        )}
 
         <View style={styles.lineSeparator} />
       </View>

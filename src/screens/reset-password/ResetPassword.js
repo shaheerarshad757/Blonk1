@@ -11,15 +11,18 @@ import {BoxedCheckbox} from '@components';
 
 import styles from './ResetPassword.style';
 
-const ResetPassword: (props) => React$Node = props => {
+const ResetPassword: () => React$Node = props => {
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Login')}>
+        <Text style={styles.options}> {'<'} Back </Text>
+      </TouchableOpacity>
       <View style={styles.titleTopSpace} />
       <View style={styles.logo}>
-      <Image
-        resizeMode="contain"
-        source={require('../../assets/logo-sign-in.png')}
-      />
+        <Image
+          resizeMode="contain"
+          source={require('../../assets/logo-sign-in.png')}
+        />
       </View>
       <View style={styles.titleBottomSpace} />
       <Text scale style={styles.slogan}>
@@ -31,7 +34,9 @@ const ResetPassword: (props) => React$Node = props => {
       <View style={styles.formContainer}>
         <TextInput style={styles.Field} placeholder="Email" />
         <TouchableOpacity
-          onPress={() => {props.navigation.navigate('Login')}}>
+          onPress={() => {
+            props.navigation.navigate('Login');
+          }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Send Reset Email</Text>
           </View>

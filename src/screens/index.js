@@ -1,6 +1,6 @@
 import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 import {AuthStack} from '../navigation/authNavigator';
-import {HomeNavigator} from '../navigation/homeNavigator';
+import {HomeStackNavigator} from '../navigation/homeNavigator';
 import {DrawerNavigation} from '../navigation/drawerNavigator';
 
 // import Splash from '../screens/splash';
@@ -8,7 +8,7 @@ import {DrawerNavigation} from '../navigation/drawerNavigator';
 const RootStack = createSwitchNavigator(
   {
     AuthStack,
-    HomeNavigator,
+    HomeStackNavigator,
     DrawerNavigation,
   },
   {

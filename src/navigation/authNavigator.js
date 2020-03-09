@@ -1,4 +1,5 @@
 import {createStackNavigator} from 'react-navigation-stack';
+// import { TransitionSpecs } from '@react-navigation/stack';
 import ResetPassword from '../screens/reset-password';
 import Login from '../screens/Login';
 
@@ -11,9 +12,10 @@ const AuthStack = createStackNavigator(
     initialRouteName: 'Login',
     headerMode: 'none',
     defaultNavigationOptions: {
-      cardStyle: {
-        backgroundColor: 'transparent',
-      },
+      // cardStyle: {
+      //   backgroundColor: 'transparent',
+      //   cardOverlayEnabled: 'false',
+      // },
     },
   },
 );

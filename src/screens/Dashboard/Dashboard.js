@@ -8,7 +8,13 @@ import styles from './Dashboard.style';
 const Dashboard: props => React$Node = props => {
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header />
+      <Header
+        leftIconName={'bars'}
+        onLeftButtonPress={() => props.navigation.navigate('DrawerNavigation')}
+        titleDropDown
+        title="Roxberry Juice"
+        TopNavigator
+      />
     </SafeAreaView>
   );
 };

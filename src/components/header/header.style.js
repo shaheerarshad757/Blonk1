@@ -3,9 +3,11 @@ const {width: screenWidth} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    width: screenWidth,
-    height: screenWidth / 4 - 20,
+    // width: screenWidth,
+    // height: screenWidth / 4 - 20,
+    //flex: 1,
     //backgroundColor: 'yellow',
+    marginBottom: 8,
   },
   options: {
     marginLeft: 20,
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     //backgroundColor: 'yellow',
     //flex: 1,
-    //backgroundColor: 'green',
+    backgroundColor: 'green',
   },
   TopNavigator: {
     flexDirection: 'row',
@@ -48,6 +50,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(91, 192, 190)',
     borderBottomWidth: 2,
     padding: 10,
+    // flex: 1,
+    justifyContent: 'center',
   },
   headerButtonText: {
     fontSize: 12,
