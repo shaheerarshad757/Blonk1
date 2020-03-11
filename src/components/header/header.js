@@ -37,7 +37,7 @@ const Header: props => React$Node = props => {
             }>
             <Icon
               name={'sort-down'}
-              size={21}
+              size={20}
               solid
               color={'rgb( 20, 20, 20)'}
               style={styles.arrowDown}

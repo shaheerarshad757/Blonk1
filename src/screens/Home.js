@@ -43,7 +43,7 @@ const About = () => {
         leftLinkName={'Cancel'}
         RightLinkName={'Post'}
       />
-      <ScrollView endFillColor='green'>
+      <ScrollView contentContainerStyle={{marginBottom: 4}}>
         <TextInput
           style={styles.postInput}
           multiline
