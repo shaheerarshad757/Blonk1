@@ -1,10 +1,41 @@
-import React from 'react';
-import {SafeAreaView, View, ScrollView, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  SafeAreaView,
+  View,
+  ScrollView,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import {Header, Card, CheckBox, DatePickerTrigger} from '@components';
 
 
 const About = () => {
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+  };
+
+  const showMode = currentMode => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const showTimepicker = () => {
+    showMode('time');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <Header
@@ -12,7 +43,7 @@ const About = () => {
         leftLinkName={'Cancel'}
         RightLinkName={'Post'}
       />
-      <ScrollView>
+      <ScrollView endFillColor='green'>
         <TextInput
           style={styles.postInput}
           multiline
@@ -81,7 +112,14 @@ const About = () => {
             <Text style={styles.shareText}>Schedule Post</Text>
           </View>
         </TouchableOpacity>
-        <DatePickerTrigger />
+        <DateTimePicker
+          testID="dateTimePicker"
+          timeZoneOffsetInMinutes={0}
+          value={date}
+          mode={mode}
+          is24Hour={true}
+          display="default"
+        />
         <View style={styles.TopNavigator}>
           <View style={styles.headerButtons}>
             <TouchableOpacity onPress={() => {}}>
