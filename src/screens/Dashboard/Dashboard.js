@@ -29,7 +29,7 @@ const actions = [
   {
     text: 'Create a Post',
     color: 'rgb(91, 192, 190)',
-    name: 'Create a Post',
+    name: 'Post',
     position: 4,
   },
 ];
@@ -47,7 +47,7 @@ const Dashboard: props => React$Node = props => {
         color="rgb(91, 192, 190)"
         actions={actions}
         onPressItem={name => {
-          console.log(`selected button: ${name}`);
+          alert(`selected button: ${name}`);
         }}
       />
     </SafeAreaView>
