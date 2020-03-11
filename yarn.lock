@@ -5308,6 +5308,11 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
+react-native-view-overflow@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-view-overflow/-/react-native-view-overflow-0.0.5.tgz#56c49f0f7cdb9fd145de241d6f6bf4cfe5660915"
+  integrity sha512-p/peyU3IC7M84bZEz2K7hpLrKBPUT3W7/+wnXjGw40hX/Iaj0OmOqJI6mJcBUlpcHJvGYbx2OOpPZa4+hwJC6w==
+
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"

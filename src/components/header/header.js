@@ -7,7 +7,7 @@ const Header: props => React$Node = props => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.headerRow}>
           {props.leftIconName ? (
             <TouchableOpacity
               onPress={() =>
@@ -19,6 +19,12 @@ const Header: props => React$Node = props => {
                 color={'rgb( 20, 20, 20)'}
                 style={styles.options}
               />
+            </TouchableOpacity>
+          ) : null}
+          {props.leftLinkName ? (
+            <TouchableOpacity
+              onPress={() => props.onLeftLinkPress && props.onLeftLinkPress()}>
+            <Text style={styles.LeftLink}>{props.leftLinkName}</Text>
             </TouchableOpacity>
           ) : null}
 
@@ -37,6 +43,14 @@ const Header: props => React$Node = props => {
                 color={'rgb( 20, 20, 20)'}
                 style={styles.arrowDown}
               />
+            </TouchableOpacity>
+          ) : null}
+          {props.RightLinkName ? (
+            <TouchableOpacity
+              onPress={() =>
+                props.onRightLinkPress && props.onRightLinkPress()
+              }>
+            <Text style={styles.RightLink}>{props.RightLinkName}</Text>
             </TouchableOpacity>
           ) : null}
         </View>
