@@ -126,7 +126,9 @@ const ReviewGeneration: props => React$Node = props => {
           />
           <Card style={styles.cardStyle}>
             <Text style={styles.headings}>Preview</Text>
-            <Text>Thank you for Your Business</Text>
+            <Text style={styles.messagePreview}>Thank you for Your Business</Text>
+            <Text style={styles.messagePreview}>JJUMPERS</Text>
+
           </Card>
         </Card>
       </ScrollView>
@@ -199,6 +201,11 @@ const styles = StyleSheet.create({
     borderColor:'rgb(170 ,169, 169)',
     height: 150,
     //textAlignVertical: 'top',
+  },
+  messagePreview: {
+    textAlign:'center',
+    fontSize: 16,
+    letterSpacing: 0.2,
   },
 });
 export default ReviewGeneration;

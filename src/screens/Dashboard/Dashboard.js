@@ -24,14 +24,14 @@ const Dashboard: props => React$Node = props => {
           buttonColor="rgb(91, 192, 190)"
           title="Upload Media"
           size={50}
-          onPress={() => props.navigation.navigate('Post')}>
+          onPress={() => {}}>
           <Icon name="upload" style={styles.actionButtonIcon} />
         </ActionButton.Item>
         <ActionButton.Item
           buttonColor="rgb(91, 192, 190)"
           title="Edit Listing"
           size={50}
-          onPress={() => {}}>
+          onPress={() => props.navigation.navigate('EditListing')}>
           <Icon name="pen" style={styles.actionButtonIcon} />
         </ActionButton.Item>
         <ActionButton.Item
@@ -45,7 +45,7 @@ const Dashboard: props => React$Node = props => {
           buttonColor="rgb(91, 192, 190)"
           title="Create a Post"
           size={50}
-          onPress={() => {}}>
+          onPress={() => props.navigation.navigate('Post')}>
           <Icon name="edit" style={styles.actionButtonIcon} />
         </ActionButton.Item>
       </ActionButton>
