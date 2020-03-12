@@ -5313,6 +5313,11 @@ react-native-screens@^2.2.0:
   dependencies:
     debounce "^1.2.0"
 
+react-native-switch-selector@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-switch-selector/-/react-native-switch-selector-2.0.3.tgz#7ef296afe0988fd5baa38305bd78c4fcdc20bd72"
+  integrity sha512-p/c8+VBo06po+y6dHZdSBZOe5HulkFI3ltT99s7/byT9hPKT9M9fYFuUYm6SCH9lyPR0o8bZBO3Jewa0ahra2A==
+
 react-native-tab-view@^2.11.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.13.0.tgz#23037aa43b0f8f682ddc20415a4baaaf6f82ae8f"

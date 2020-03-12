@@ -4,7 +4,7 @@ import {Header,FloatingButton} from '@components';
 //import {FloatingAction} from 'react-native-floating-action';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Post from './Post';
+//import Post from './Post';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import styles from './Dashboard.style';
@@ -38,7 +38,7 @@ const Dashboard: props => React$Node = props => {
           buttonColor="rgb(91, 192, 190)"
           title="Review Generation"
           size={50}
-          onPress={() => {}}>
+          onPress={() => props.navigation.navigate('ReviewGeneration')}>
           <Icon name="paper-plane" style={styles.actionButtonIcon} />
         </ActionButton.Item>
         <ActionButton.Item

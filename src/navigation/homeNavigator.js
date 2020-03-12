@@ -5,6 +5,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import {TabBarIcon} from '@components';
 import Dashboard from '../screens/Dashboard/Dashboard';
 import Post from '../screens/Dashboard/Post';
+import ReviewGeneration from '../screens/Dashboard/ReviewGeneration';
 import Insights from '../screens/Insights/Insights';
 import Reviews from '../screens/Reviews/Reviews';
 import Social from '../screens/Social/Social';
@@ -74,6 +75,7 @@ const HomeStackNavigator = createStackNavigator(
     HomeStack: {screen: HomeNavigator},
     Drawer: {screen: DrawerNavigation},
     Post: {screen: Post},
+    ReviewGeneration: {screen: ReviewGeneration},
   },
   {
     initialRouteName: 'HomeStack',

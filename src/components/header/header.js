@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, SafeAreaView, View, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './header.style';
 
@@ -26,7 +26,7 @@ const Header: props => React$Node = props => {
             <Text style={styles.LeftLink}>{props.leftLinkName}</Text>
           </TouchableOpacity>
         ) : null}
-
+        <View style={{flex:0.5}}/>
         {props.title ? (
           <Text style={styles.headerTitle}>{props.title}</Text>
         ) : null}
@@ -44,6 +44,7 @@ const Header: props => React$Node = props => {
             />
           </TouchableOpacity>
         ) : null}
+        <View style={{flex:0.4}} />
         {props.RightLinkName ? (
           <TouchableOpacity
             onPress={() => props.onRightLinkPress && props.onRightLinkPress()}>
@@ -70,7 +71,6 @@ const Header: props => React$Node = props => {
       )}
 
       <View style={styles.lineSeparator} />
-
     </View>
   );
 };

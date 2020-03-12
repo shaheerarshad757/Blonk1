@@ -17,25 +17,25 @@ const Post: props => React$Node = props => {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
+  //
+  // const onChange = (event, selectedDate) => {
+  //   const currentDate = selectedDate || date;
+  //   setShow(Platform.OS === 'ios');
+  //   setDate(currentDate);
+  // };
+  //
+  // const showMode = currentMode => {
+  //   setShow(true);
+  //   setMode(currentMode);
+  // };
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === 'ios');
-    setDate(currentDate);
-  };
-
-  const showMode = currentMode => {
-    setShow(true);
-    setMode(currentMode);
-  };
-
-  const showDatepicker = () => {
-    showMode('date');
-  };
-
-  const showTimepicker = () => {
-    showMode('time');
-  };
+  // const showDatepicker = () => {
+  //   showMode('date');
+  // };
+  //
+  // const showTimepicker = () => {
+  //   showMode('time');
+  // };
   return (
     <SafeAreaView style={styles.container}>
       <Header

@@ -3,20 +3,13 @@ const {width: screenWidth} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    // // width: screenWidth,
-    // // height: screenWidth / 4 - 20,
-    // flex: 0.1,
-    // //flexDirection: 'row',
-    // //backgroundColor: 'yellow',
-    // //marginBottom: 8,
-    // //alignItems: 'center',
-    // marginBottom: -8,
     paddingTop: 18,
     shadowOpacity: 0.1,
     shadowOffset: {height: 4},
     backgroundColor: '#FFFFFF',
     elevation: 5,
     paddingBottom: 0,
+    //flex: 0.1,
   },
   headerRow: {
     flexDirection: 'row',
@@ -37,8 +30,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     textAlign: 'center',
     fontWeight: 'bold',
-    //backgroundColor:'green',
-    marginLeft: screenWidth / 2 - 120,
+    //marginLeft: screenWidth / 2 - 120,
     marginTop: -2,
     fontSize: 18,
     letterSpacing: 1.5,
@@ -46,7 +38,7 @@ const styles = StyleSheet.create({
     color: 'rgb( 20, 20, 20)',
   },
   RightLink: {
-    marginLeft: '15%',
+    marginLeft: 0,
     marginTop: 0,
     //flex: 1,
     fontSize: 15,
