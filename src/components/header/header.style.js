@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     color: 'rgb( 20, 20, 20)',
   },
   RightLink: {
-    marginLeft: screenWidth / 2 - 120,
+    marginLeft: '15%',
     marginTop: 0,
     //flex: 1,
     fontSize: 15,

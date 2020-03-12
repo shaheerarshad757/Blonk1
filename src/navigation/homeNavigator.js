@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {TabBarIcon} from '@components';
 import Dashboard from '../screens/Dashboard/Dashboard';
+import Post from '../screens/Dashboard/Post';
 import Insights from '../screens/Insights/Insights';
 import Reviews from '../screens/Reviews/Reviews';
 import Social from '../screens/Social/Social';
@@ -72,16 +73,17 @@ const HomeStackNavigator = createStackNavigator(
   {
     HomeStack: {screen: HomeNavigator},
     Drawer: {screen: DrawerNavigation},
+    Post: {screen: Post},
   },
   {
     initialRouteName: 'HomeStack',
     headerMode: 'none',
-    defaultNavigationOptions: {
-      cardStyle: {
-        backgroundColor: 'transparent',
-        cardOverlayEnabled: 'true',
-      },
-    },
+    // defaultNavigationOptions: {
+    //   cardStyle: {
+    //     backgroundColor: 'transparent',
+    //     cardOverlayEnabled: 'true',
+    //   },
+    // },
   },
 );
 

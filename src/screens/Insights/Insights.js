@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Header, Card} from '@components';
+import styles from './Insights.style';
 
 export default class Home extends Component {
   render() {
@@ -115,138 +116,42 @@ export default class Home extends Component {
               <Text style={styles.schedule}>Sunday</Text>
               <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
             </View>
-            <View style={styles.week}>
-              <View style={{flex: 1}}>
-                <Text style={styles.schedule}>Monday</Text>
-              </View>
-              <View style={{flex: 1.35}}>
-                <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-              </View>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Monday</Text>
+
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <View style={styles.week}>
-              <View style={{flex: 1}}>
-                <Text style={styles.schedule}>Tuesday</Text>
-              </View>
-              <View style={{flex: 1.35}}>
-                <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-              </View>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Tuesday</Text>
+
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <View style={styles.week}>
-              <View style={{flex: 1}}>
-                <Text style={styles.schedule}>Wednesday</Text>
-              </View>
-              <View style={{flex: 1.35}}>
-                <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-              </View>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Wednesday</Text>
+
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <View style={styles.week}>
-              <View style={{flex: 1}}>
-                <Text style={styles.schedule}>Thursday</Text>
-              </View>
-              <View style={{flex: 1.35}}>
-                <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-              </View>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Thursday</Text>
+
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <View style={styles.week}>
-              <View style={{flex: 1}}>
-                <Text style={styles.schedule}>Friday</Text>
-              </View>
-              <View style={{flex: 1.35}}>
-                <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-              </View>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Friday</Text>
+
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <Text style={{textAlign: 'center', margin: 10, color: 'rgb(102,102,102)', fontWeight: '400'}}>Close on Bank Holidays</Text>
+            <View style={styles.weekDays}>
+              <Text style={styles.schedule}>Saturday</Text>
+              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
+            </View>
+            <Text
+              style={styles.note}>
+              Close on Bank Holidays
+            </Text>
           </Card>
         </ScrollView>
       </SafeAreaView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  coverImage: {
-    backgroundColor: 'black',
-    height: 200,
-    borderRadius: 10,
-  },
-  container: {
-    flex: 1,
-  },
-  profileImage: {
-    height: 102,
-    width: 102,
-    borderRadius: 51,
-    backgroundColor: 'white',
-    top: 140,
-    alignSelf: 'center',
-    position: 'absolute',
-  },
-  description: {
-    fontSize: 16,
-    color: '#696969',
-    marginTop: 50,
-    alignItems: 'center',
-  },
-  cardStyle: {
-    margin: 8,
-  },
-  buttonContainer: {
-    marginTop: 10,
-    height: 45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-    backgroundColor: '#00BFFF',
-  },
-  profileName: {
-    fontWeight: 'bold',
-    fontSize: 15,
-    marginBottom: 10,
-  },
-  profileDesciption: {
-    fontSize: 13,
-    color: 'rgb(102,102,102)',
-  },
-  workDescription: {
-    margin: 10,
-    color: 'rgb(102,102,102)',
-    fontSize: 13,
-  },
-  links: {
-    marginLeft: 10,
-  },
-  linkAddress: {
-    marginLeft: 10,
-    color: 'rgb( 58, 129, 216)',
-  },
-  linkView: {
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    margin: 10,
-  },
-  sectionHeading: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginLeft: 10,
-    marginBottom: 15,
-  },
-  schedule: {
-    color: 'rgb(102,102,102)',
-  },
-  scheduleView: {
-    flexDirection: 'row',
-    flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    marginLeft: 10,
-  },
-  week: {
-    flex: 1,
-    flexDirection: 'row',
-    marginLeft: 130,
-    marginTop: 5,
-  },
-});

@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {Header, Card, CheckBox} from '@components';
 
-const About = () => {
+const Post: props => React$Node = props => {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -42,6 +42,9 @@ const About = () => {
         title={'Create Post'}
         leftLinkName={'Cancel'}
         RightLinkName={'Post'}
+        onLeftLinkPress={() => {
+          props.navigation.navigate('HomeStack');
+        }}
       />
       <ScrollView contentContainerStyle={{marginBottom: 4}}>
         <TextInput
@@ -206,4 +209,4 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
-export default About;
+export default Post;
