@@ -24,7 +24,7 @@ const Dashboard: props => React$Node = props => {
           buttonColor="rgb(91, 192, 190)"
           title="Upload Media"
           size={50}
-          onPress={() => {}}>
+          onPress={() => props.navigation.navigate('UploadMedia')}>
           <Icon name="upload" style={styles.actionButtonIcon} />
         </ActionButton.Item>
         <ActionButton.Item
