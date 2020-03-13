@@ -8,12 +8,19 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import SwitchSelector from 'react-native-switch-selector';
+import FastImage from 'react-native-fast-image';
 import {Header, Card} from '@components';
 
+
+// dataSource: items,
 const EditListing: props => React$Node = props => {
+  const [dataSource,setdataSource] = useState( Array.apply(null, Array(60)).map((v, i) => {
+    return {id: i, src: 'http://placehold.it/200x200?text=' + (i + 1)};
+  })
+  );
   return (
     <SafeAreaView style={styles.container}>
       <Header
@@ -163,6 +170,62 @@ const EditListing: props => React$Node = props => {
           />
           <View style={styles.line} />
           <Text style={styles.headings}>Additional Photos</Text>
+          <FlatList
+            data={dataSource}
+            renderItem={({item}) => (
+              <View style={styles.imageStyle}>
+                <Icon
+                  name={'times-circle'}
+                  size={15}
+                  color={'rgb(170 ,169, 169)'}
+                  style={styles.crossPhotos}
+                  solid
+                />
+                <Image style={styles.imageThumbnail} source={{uri: item.src}} />
+              </View>
+            )}
+            //Setting the number of column
+            numColumns={3}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </Card>
+        <Card style={styles.cardStyle}>
+          <Text style={styles.headings}>Additional Information</Text>
+          <Text style={styles.headings}>Keywords</Text>
+          <Text style={styles.placeHolders}>JJUMPP, LLC</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Products</Text>
+          <Text style={styles.placeHolders}>JJUMPPERS</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Services</Text>
+          <Text style={styles.placeHolders}>SaaS</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Specialities</Text>
+          <Text style={styles.placeHolders}>Software</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Associations</Text>
+          <Text style={styles.placeHolders}>None</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Brands</Text>
+          <Text style={styles.placeHolders}>Stuff goes here</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Languages</Text>
+          <Text style={styles.placeHolders}>Description</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Year Established</Text>
+          <Text style={styles.placeHolders}>12/2001</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Payment Methods</Text>
+          <Text style={styles.placeHolders}>Visa</Text>
+          <Text style={styles.placeHolders}>Mastercard</Text>
+          <Text style={styles.placeHolders}>American Express</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Instagram URL</Text>
+          <Text style={styles.placeHolders}>URL GOES HERE</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Youtube URL</Text>
+          <Text style={styles.placeHolders}>URL GOES HERE</Text>
+          <View style={styles.line} />
         </Card>
       </ScrollView>
     </SafeAreaView>
@@ -280,7 +343,23 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: -4,
     //backgroundColor: 'rgb(170 ,169, 169)',
-    alignSelf:'flex-start',
-  }
+    alignSelf: 'flex-start',
+  },
+  imageThumbnail: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 100,
+  },
+  crossPhotos: {
+    //marginLeft: 14,
+    marginTop: 10,
+    marginBottom: -1,
+  },
+  imageStyle: {
+    flex: 1,
+    //flexDirection: 'column',
+    marginLeft: 20,
+    //marginHorizontal: 10,
+  },
 });
 export default EditListing;
