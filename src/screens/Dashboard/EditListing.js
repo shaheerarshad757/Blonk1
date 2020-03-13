@@ -11,15 +11,14 @@ import {
   FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import FastImage from 'react-native-fast-image';
+// import FastImage from 'react-native-fast-image';
 import {Header, Card} from '@components';
 
-
-// dataSource: items,
 const EditListing: props => React$Node = props => {
-  const [dataSource,setdataSource] = useState( Array.apply(null, Array(60)).map((v, i) => {
-    return {id: i, src: 'http://placehold.it/200x200?text=' + (i + 1)};
-  })
+  const [dataSource] = useState(
+    Array.apply(null, Array(12)).map((v, i) => {
+      return {id: i, src: 'http://placehold.it/200x200?text=' + (i + 1)};
+    }),
   );
   return (
     <SafeAreaView style={styles.container}>
@@ -289,7 +288,7 @@ const styles = StyleSheet.create({
     marginRight: 30,
     borderBottomWidth: 1,
     // width: '85%',
-    flex:0.9,
+    flex: 0.9,
     //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
@@ -309,7 +308,7 @@ const styles = StyleSheet.create({
     marginRight: 30,
     borderBottomWidth: 1,
     // width: '85%',
-    flex:0.4,
+    flex: 0.4,
     //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
