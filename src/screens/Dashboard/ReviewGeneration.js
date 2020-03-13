@@ -57,7 +57,7 @@ const ReviewGeneration: props => React$Node = props => {
           props.navigation.navigate('HomeStack');
         }}
       />
-      <ScrollView contentContainerStyle={{marginBottom: 4}}>
+      <ScrollView contentContainerStyle={{marginBottom: 22}}>
         <Card style={styles.cardStyle}>
           <Text style={styles.headings}>Delivery Method</Text>
           <SwitchSelector
@@ -96,8 +96,8 @@ const ReviewGeneration: props => React$Node = props => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {}}>
-              <View style={{marginTop: 20}} />
-              <Text style={styles.linkStyle}>+ add another recipietant</Text>
+              <View style={{marginTop: 10}} />
+              <Text style={styles.linkStyle}>+ add another recipient</Text>
             </TouchableOpacity>
           </View>
         </Card>
@@ -115,17 +115,21 @@ const ReviewGeneration: props => React$Node = props => {
           <TextInput
             style={styles.message}
             multiline={true}
-            numberOfLines={10}
-            maxLength={1000}
+            //numberOfLines={10}
+            //maxLength={1000}
             placeholder={
-              'Dear [First Name], \nThank You for your valued business'
+              'Dear [First Name], \nThank You for your valued business with [business name]. Its important for us to maintain excellent service, and we invite you to give us your feedback. \n (Link to submit a review)'
             }
           />
           <Card style={styles.cardStyle}>
             <Text style={styles.headings}>Preview</Text>
-            <Text style={styles.messagePreview}>Thank you for Your Business</Text>
-            <Text style={styles.messagePreview}>JJUMPERS</Text>
-
+            <Text style={styles.messageHead}>Thank you for Your Business</Text>
+            <Text style={styles.messageHead}>JJUMPERS</Text>
+            <Text style={styles.messagePreview}>
+              Dear [First Name],Thank You for your valued business with
+              [business name]. Its important for us to maintain excellent
+              service, and we invite you to give us your feedback.
+            </Text>
           </Card>
         </Card>
       </ScrollView>
@@ -199,10 +203,17 @@ const styles = StyleSheet.create({
     height: 150,
     //textAlignVertical: 'top',
   },
-  messagePreview: {
+  messageHead: {
     textAlign:'center',
     fontSize: 16,
     letterSpacing: 0.2,
+  },
+  messagePreview: {
+    textAlign:'center',
+    fontSize: 12,
+    letterSpacing: 0.2,
+    marginHorizontal: 30,
+    marginBottom: 30,
   },
 });
 export default ReviewGeneration;

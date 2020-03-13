@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import ActionButton from 'react-native-action-button';
 import {Header, Card} from '@components';
 import styles from './Insights.style';
 
@@ -155,6 +156,36 @@ export default class Home extends Component {
             </View>
             <Text style={styles.note}>Close on Bank Holidays</Text>
           </Card>
+          <ActionButton buttonColor="rgb(91, 192, 190)" size={60} spacing={10}>
+            <ActionButton.Item
+              buttonColor="rgb(91, 192, 190)"
+              title="Upload Media"
+              size={50}
+              onPress={() => props.navigation.navigate('UploadMedia')}>
+              <Icon name="upload" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor="rgb(91, 192, 190)"
+              title="Edit Listing"
+              size={50}
+              onPress={() => props.navigation.navigate('EditListing')}>
+              <Icon name="pen" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor="rgb(91, 192, 190)"
+              title="Review Generation"
+              size={50}
+              onPress={() => props.navigation.navigate('ReviewGeneration')}>
+              <Icon name="paper-plane" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+            <ActionButton.Item
+              buttonColor="rgb(91, 192, 190)"
+              title="Create a Post"
+              size={50}
+              onPress={() => props.navigation.navigate('Post')}>
+              <Icon name="edit" style={styles.actionButtonIcon} />
+            </ActionButton.Item>
+          </ActionButton>
         </ScrollView>
       </SafeAreaView>
     );

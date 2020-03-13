@@ -143,7 +143,7 @@ const Post: props => React$Node = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: 'blue',
+    backgroundColor: 'white',
   },
   postInput: {
     //flex: 0.1,
@@ -151,8 +151,9 @@ const styles = StyleSheet.create({
     borderWidth: 0.38,
     borderBottomWidth: 1,
     //marginTop: 27,
-    width: '100%',
-    height: '50%',
+    //flex:1,
+    //width: '100%',
+    height: 300,
     padding: 10,
   },
   shareView: {
