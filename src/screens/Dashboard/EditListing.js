@@ -27,14 +27,14 @@ const EditListing: props => React$Node = props => {
         <Card style={styles.cardStyle}>
           <Text style={styles.headings}>Business Overview</Text>
           <Text style={styles.headings}>Location Name</Text>
-          <Text style={styles.input}>JJUMPP, LLC</Text>
-          <View style={styles.line}/>
+          <Text style={styles.placeHolders}>JJUMPP, LLC</Text>
+          <View style={styles.line} />
           <View style={styles.headingNote}>
             <Text style={styles.headings}>Location Nickname</Text>
             <Text style={styles.note}> (for internal purposes only)</Text>
           </View>
-          <Text style={styles.input}>JJUMPERS</Text>
-          <View style={styles.line}/>
+          <Text style={styles.placeHolders}>JJUMPERS</Text>
+          <View style={styles.line} />
           <Text style={styles.headings}>Categories</Text>
           <View style={styles.business}>
             <Text style={styles.note}>Business Name > </Text>
@@ -68,6 +68,7 @@ const EditListing: props => React$Node = props => {
               />
             </TouchableOpacity>
           </View>
+          <View style={styles.line} />
           <Text style={styles.headings}>Address</Text>
           <TextInput
             placeholder="Street Address Line 1"
@@ -96,7 +97,21 @@ const EditListing: props => React$Node = props => {
               />
             </TouchableOpacity>
           </View>
+          <View style={styles.line} />
           <Text style={styles.headings}>Map</Text>
+          <View style={styles.line} />
+          <Text style={styles.headings}>Business Phone</Text>
+          <TextInput placeholder="800-555-5555" style={styles.inputAddress} />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Featured Messages</Text>
+          <TextInput placeholder="Message" style={styles.inputAddress} />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Business Description</Text>
+          <TextInput placeholder="Description" style={styles.inputAddress} />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Business Hours</Text>
+          
+          <View style={styles.line} />
         </Card>
       </ScrollView>
     </SafeAreaView>
@@ -118,6 +133,7 @@ const styles = StyleSheet.create({
   },
   input: {
     marginLeft: 20,
+    //marginBottom: 10,
     marginTop: 10,
     borderBottomWidth: 1,
     width: '85%',
@@ -129,6 +145,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: 10,
     borderColor: 'rgb(241 ,241, 241)',
+    marginTop: 10,
   },
   headingNote: {
     flexDirection: 'row',
@@ -185,6 +202,15 @@ const styles = StyleSheet.create({
   address: {
     flexDirection: 'row',
     marginLeft: 10,
+  },
+  placeHolders: {
+    marginLeft: 20,
+    //marginBottom: 10,
+    marginTop: 10,
+    borderBottomWidth: 1,
+    width: '85%',
+    paddingBottom: 10,
+    color: 'rgb(170 ,169, 169)',
   },
 });
 export default EditListing;
