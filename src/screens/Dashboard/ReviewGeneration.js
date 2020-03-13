@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   View,
@@ -7,12 +7,9 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  Platform,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import SwitchSelector from 'react-native-switch-selector';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import {Header, Card, CheckBox} from '@components';
+import {Header, Card} from '@components';
 
 const options = [
   {
@@ -141,7 +138,7 @@ const styles = StyleSheet.create({
   },
   cardStyle: {
     margin: 4,
-    marginLeft:6
+    marginLeft:6,
   },
   cardFormStyle: {
     margin: 4,
