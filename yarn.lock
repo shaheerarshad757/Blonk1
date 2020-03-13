@@ -5264,6 +5264,11 @@ react-native-device-info@^5.5.3:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-5.5.3.tgz#6652fb46c4602a1dd3a5d6a18d2266ecdf97fec7"
   integrity sha512-bzUVTPHca+FfNco1qaOM1+idoeII8zdpGRsR+RK+DWhwp9utHZWfbkonZZ9XFm/U+i3mirNxt6oaKV+vUMjMzg==
 
+react-native-fast-image@^8.1.4:
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.1.4.tgz#74eb4de22732f88a5bb0f053525ae8b50e02189d"
+  integrity sha512-gaY9zosRrSiA+y+bCO77sOitQFeAJTGbhQfCkG5MktLMdsRNLH/s+qyesWBr9iRafTMUkhXoJOsfT9lGAPiicg==
+
 react-native-floating-action@^1.20.0:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/react-native-floating-action/-/react-native-floating-action-1.20.0.tgz#65a975669e30b16900e095ec1a2448e4ce377869"

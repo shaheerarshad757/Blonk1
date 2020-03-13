@@ -7,6 +7,7 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import SwitchSelector from 'react-native-switch-selector';
@@ -110,8 +111,58 @@ const EditListing: props => React$Node = props => {
           <TextInput placeholder="Description" style={styles.inputAddress} />
           <View style={styles.line} />
           <Text style={styles.headings}>Business Hours</Text>
-          
+          <Text style={[styles.note,{marginLeft: 30}]}>Closed/Open</Text>
           <View style={styles.line} />
+          <Text style={styles.headings}>Additional Hours</Text>
+          <TextInput
+            placeholder="Close on bank holidays"
+            style={styles.inputAddress}
+          />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Website</Text>
+          <TextInput placeholder="800-555-5555" style={styles.inputAddress} />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Email</Text>
+          <TextInput placeholder="800-555-5555" style={styles.inputAddress} />
+          <View style={styles.line} />
+        </Card>
+        <Card style={styles.cardStyle}>
+          <Text style={styles.headings}>Photos</Text>
+          <Text style={styles.headings}>Business Logo</Text>
+          <Icon
+            name={'times-circle'}
+            size={15}
+            color={'rgb(170 ,169, 169)'}
+            style={styles.crossIcon}
+            solid
+          />
+          <Image
+            style={styles.BusinessLogo}
+            source={{
+              uri:
+                'https://i.pinimg.com/originals/be/b9/58/beb958e56b3cb2ce745e880c9d482e04.jpg',
+            }}
+            //resizeMode="center"
+          />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Cover Photo</Text>
+          <Icon
+            name={'times-circle'}
+            size={15}
+            color={'rgb(170 ,169, 169)'}
+            style={styles.crossIcon}
+            solid
+          />
+          <Image
+            style={styles.coverImage}
+            source={{
+              uri:
+                'https://i.pinimg.com/originals/be/b9/58/beb958e56b3cb2ce745e880c9d482e04.jpg',
+            }}
+            resizeMode="center"
+          />
+          <View style={styles.line} />
+          <Text style={styles.headings}>Additional Photos</Text>
         </Card>
       </ScrollView>
     </SafeAreaView>
@@ -137,7 +188,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderBottomWidth: 1,
     width: '85%',
-    paddingBottom: 10,
+    //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
   line: {
@@ -176,7 +227,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // width: '85%',
     flex:0.9,
-    paddingBottom: 10,
+    //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
   inputCity: {
@@ -186,7 +237,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // width: '85%',
     flex: 0.9,
-    paddingBottom: 10,
+    //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
   inputStates: {
@@ -196,7 +247,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     // width: '85%',
     flex:0.4,
-    paddingBottom: 10,
+    //paddingBottom: 10,
     borderColor: 'rgb(170 ,169, 169)',
   },
   address: {
@@ -209,8 +260,27 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderBottomWidth: 1,
     width: '85%',
-    paddingBottom: 10,
+    //paddingBottom: 10,
     color: 'rgb(170 ,169, 169)',
   },
+  coverImage: {
+    backgroundColor: 'black',
+    height: 150,
+    borderRadius: 4,
+    marginHorizontal: 20,
+  },
+  BusinessLogo: {
+    backgroundColor: 'black',
+    height: 300,
+    borderRadius: 4,
+    marginHorizontal: 20,
+  },
+  crossIcon: {
+    marginLeft: 14,
+    marginTop: 10,
+    marginBottom: -4,
+    //backgroundColor: 'rgb(170 ,169, 169)',
+    alignSelf:'flex-start',
+  }
 });
 export default EditListing;

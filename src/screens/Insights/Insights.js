@@ -24,14 +24,22 @@ export default class Home extends Component {
         />
         <ScrollView>
           <Card style={styles.cardStyle}>
-            <Image
-              style={styles.coverImage}
-              source={{
-                uri:
-                  'https://i.pinimg.com/originals/be/b9/58/beb958e56b3cb2ce745e880c9d482e04.jpg',
+            <View style={{flexDirection:'column'}}>
+              <Icon
+                name={'cross'}
+                size={15}
+                color={'rgb( 20, 20, 20)'}
+                style={styles.crossImage}
+              />
+              <Image
+                style={styles.coverImage}
+                source={{
+                  uri:
+                    'https://i.pinimg.com/originals/be/b9/58/beb958e56b3cb2ce745e880c9d482e04.jpg',
               }}
               resizeMode="center"
             />
+            </View>
             <Image
               style={styles.profileImage}
               source={{
@@ -145,10 +153,7 @@ export default class Home extends Component {
               <Text style={styles.schedule}>Saturday</Text>
               <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
             </View>
-            <Text
-              style={styles.note}>
-              Close on Bank Holidays
-            </Text>
+            <Text style={styles.note}>Close on Bank Holidays</Text>
           </Card>
         </ScrollView>
       </SafeAreaView>
