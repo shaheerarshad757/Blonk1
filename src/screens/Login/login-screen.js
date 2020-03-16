@@ -15,11 +15,8 @@ import styles from './login-screen.style';
 
 const Login: props => React$Node = props => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-      <KeyboardAvoidingView
-        style={{flex: 1}}
-        behavior={Platform.OS === 'ios' ? 'padding' : null}>
-        <View style={{flex: 0.5}}/>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.form}>
         <View style={styles.logo}>
           <Image
             resizeMode="contain"
@@ -31,12 +28,15 @@ const Login: props => React$Node = props => {
         </Text>
 
         <View style={styles.formContainer}>
-          <TextInput style={styles.Field} placeholder="Email" />
-          <TextInput
-            style={styles.FieldPassword}
-            placeholder="Password"
-            secureTextEntry
-          />
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : null}>
+            <TextInput style={styles.Field} placeholder="Email" />
+            <TextInput
+              style={styles.FieldPassword}
+              placeholder="Password"
+              secureTextEntry
+            />
+          </KeyboardAvoidingView>
           <View style={styles.checkbox}>
             <BoxedCheckbox
               label="Remember Me "
@@ -56,12 +56,11 @@ const Login: props => React$Node = props => {
             onPress={() => {
               props.navigation.navigate('ResetPassword');
             }}>
-            <View style={{marginTop: 0}} />
             <Text style={styles.linkStyle}>Forgot Password ? </Text>
           </TouchableOpacity>
         </View>
-        <View style={{marginTop: 20,backgroundColor:'green'}}/>
-      </KeyboardAvoidingView>
+        <View style={styles.bottomSpace} />
+      </View>
     </SafeAreaView>
   );
 };

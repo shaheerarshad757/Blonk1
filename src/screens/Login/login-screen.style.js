@@ -2,19 +2,24 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {width: screenWidth} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  titleTopSpace: {
-    marginTop: 80,
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  form: {
+    flex: 1,
+    justifyContent: 'center',
   },
   logo: {
     alignSelf: 'center',
   },
   slogan: {
     fontSize: 16,
-    // fontFamily:'SF Pro Text Medium',
+    // fontFamily:'SFProText-Medium',
     textAlign: 'center',
     letterSpacing: 2,
     color: 'rgb(170, 169, 169)',
-    marginTop: '8%',
+    marginTop: 38,
   },
   formContainer: {
     alignItems: 'center',
@@ -70,15 +75,19 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    letterSpacing: 2.5,
+    letterSpacing: 2.25,
     fontWeight: 'bold',
     fontSize: 18,
+    textAlign: 'center',
   },
   linkStyle: {
     color: 'rgb( 91 ,192, 190)',
     fontSize: 16,
     letterSpacing: 2,
     marginTop: '7%',
+  },
+  bottomSpace: {
+    marginTop: 50,
   },
 });
 
