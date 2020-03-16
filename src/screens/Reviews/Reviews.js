@@ -8,30 +8,7 @@ import styles from './Reviews.style';
 const Reviews: props => React$Node = props => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Monday 8:00 a..m. to 10:00 p.m.</Text>
-      </View>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Tuesday 8:00 a..m. to 10:00 p.m.</Text>
-      </View>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Wednesday 8:00 a..m. to 10:00 p.m.</Text>
-      </View>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Thursday</Text>
-        <View style={{flex:0.1}}/>
-        <Text>8:00 a..m. to 10:00 p.m.</Text>
-      </View>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Friday</Text>
-        <View style={{flex:0.1}}/>
-        <Text>8:00 a..m. to 10:00 p.m.</Text>
-      </View>
-      <View style={{flexDirection: 'row',alignItems:'center',justifyContent:'center'}}>
-        <Text>Saturday</Text>
-        <View style={{flex:0.1}}/>
-        <Text>8:00 a..m. to 10:00 p.m.</Text>
-      </View>
+      <Text>Reviews Demo Tab</Text>
     </SafeAreaView>
   );
 };

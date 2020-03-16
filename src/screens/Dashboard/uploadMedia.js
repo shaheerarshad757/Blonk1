@@ -10,9 +10,19 @@ import {
   Image,
   FlatList,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import FastImage from 'react-native-fast-image';
-import {Header, Card} from '@components';
+import {Header} from '@components';
+import SwitchSelector from 'react-native-switch-selector';
+
+const options = [
+  {
+    label: 'LIBRARY',
+    value: '1',
+  },
+  {
+    label: 'CAMERA',
+    value: '2',
+  },
+];
 
 const EditListing: props => React$Node = props => {
   const [dataSource] = useState(
@@ -43,7 +53,7 @@ const EditListing: props => React$Node = props => {
           data={dataSource}
           renderItem={({item}) => (
             <View style={styles.imageStyle}>
-              <View style={{marginTop: 1}} />
+              <View style={{marginTop: 0}} />
               <Image style={styles.imageThumbnail} source={{uri: item.src}} />
             </View>
           )}
@@ -51,18 +61,16 @@ const EditListing: props => React$Node = props => {
           numColumns={4}
           keyExtractor={(item, index) => index.toString()}
         />
-        <View style={styles.TopNavigator}>
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>LIBRARY</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.headerButtonsSpace} />
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>CAMERA</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.switchStyle}>
+          <SwitchSelector
+            options={options}
+            initial={0}
+            onPress={value => console.log(`Call onPress with value: ${value}`)}
+            style={{}}
+            selectedColor={'rgb(91, 192, 190)'}
+            buttonColor={'rgb(255,255,255)'}
+            selectedTextContainerStyle={styles.selectedButton}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -110,14 +118,23 @@ const styles = StyleSheet.create({
   imageStyle: {
     flex: 1,
     //flexDirection: 'column',
-    margin: 1,
+    margin: 2,
     //marginHorizontal: 10,
   },
   BusinessLogo: {
     backgroundColor: 'black',
     height: 450,
     borderRadius: 4,
-    //margin: 1,
+  },
+  selectedButton: {
+    borderColor: 'rgb(91, 192, 190)',
+    borderBottomWidth: 2.5,
+    // alignSelf: 'flex-end',
+  },
+  switchStyle: {
+    marginTop: 14,
+    marginHorizontal: 70,
+    marginBottom: 20,
   },
 });
 export default EditListing;

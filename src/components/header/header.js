@@ -1,7 +1,19 @@
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
+import SwitchSelector from 'react-native-switch-selector';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './header.style';
+
+const options = [
+  {
+    label: 'OVERVIEW',
+    value: '1',
+  },
+  {
+    label: 'DIRECTORIES',
+    value: '2',
+  },
+];
 
 const Header: props => React$Node = props => {
   return (
@@ -53,22 +65,18 @@ const Header: props => React$Node = props => {
         ) : null}
       </View>
       {props.TopNavigator ? (
-        <View style={styles.TopNavigator}>
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>OVERVIEW</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.headerButtonsSpace} />
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>DIRECTORIES</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.switchStyle}>
+          <SwitchSelector
+            options={options}
+            initial={0}
+            onPress={value => console.log(`Call onPress with value: ${value}`)}
+            style={{}}
+            selectedColor={'rgb(91, 192, 190)'}
+            buttonColor={'rgb(255,255,255)'}
+            selectedTextContainerStyle={styles.selectedButton}
+          />
         </View>
-      ) : (
-        <View style={styles.lineSeparator1} />
-      )}
+      ) : null}
 
       <View style={styles.lineSeparator} />
     </View>

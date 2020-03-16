@@ -11,31 +11,23 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {Header, Card, CheckBox} from '@components';
+import SwitchSelector from 'react-native-switch-selector';
+import {Header, CheckBox} from '@components';
 
+const options = [
+  {
+    label: 'CANCEL',
+    value: '1',
+  },
+  {
+    label: 'SET SCHEDULE',
+    value: '2',
+  },
+];
 const Post: props => React$Node = props => {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  //
-  // const onChange = (event, selectedDate) => {
-  //   const currentDate = selectedDate || date;
-  //   setShow(Platform.OS === 'ios');
-  //   setDate(currentDate);
-  // };
-  //
-  // const showMode = currentMode => {
-  //   setShow(true);
-  //   setMode(currentMode);
-  // };
-
-  // const showDatepicker = () => {
-  //   showMode('date');
-  // };
-  //
-  // const showTimepicker = () => {
-  //   showMode('time');
-  // };
   return (
     <SafeAreaView style={styles.container}>
       <Header
@@ -123,18 +115,16 @@ const Post: props => React$Node = props => {
           is24Hour={true}
           display="default"
         />
-        <View style={styles.TopNavigator}>
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>CANCEL</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.headerButtonsSpace} />
-          <View style={styles.headerButtons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.headerButtonText}>SCHEDULE</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.switchStyle}>
+          <SwitchSelector
+            options={options}
+            initial={0}
+            onPress={value => console.log(`Call onPress with value: ${value}`)}
+            style={{}}
+            selectedColor={'rgb(58, 129, 216)'}
+            buttonColor={'rgb(255,255,255)'}
+            selectedTextContainerStyle={styles.selectedButton}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -195,19 +185,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     //backgroundColor: 'green'
   },
-  headerButtons: {
-    // borderColor: 'rgb(91, 192, 190)',
-    // borderBottomWidth: 2,
-    padding: 10,
-    // flex: 1,
-    justifyContent: 'center',
+  selectedButton: {
+    //borderColor: 'rgb(91, 192, 190)',
+    //sborderBottomWidth: 2.5,
+    // alignSelf: 'flex-end',
   },
-  headerButtonText: {
-    fontSize: 14,
-    color: 'rgb(102,102,102)',
-  },
-  headerButtonsSpace: {
-    marginLeft: 20,
+  switchStyle: {
+    marginTop: 14,
+    marginHorizontal: 70,
+    marginBottom: 10,
   },
 });
 export default Post;

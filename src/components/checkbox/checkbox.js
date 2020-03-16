@@ -11,7 +11,7 @@ const CheckBox: () => React$Node = props => {
       {props.isChecked ? (
         <Icon
           name={'check-square'}
-          size={21}
+          size={23}
           solid
           color={'rgb( 170, 169, 169)'}
           style={styles.leftIcon}
@@ -19,7 +19,7 @@ const CheckBox: () => React$Node = props => {
       ) : (
         <Icon
           name={'square'}
-          size={21}
+          size={23}
           color={'#818E9C'}
           style={styles.leftIcon}
         />

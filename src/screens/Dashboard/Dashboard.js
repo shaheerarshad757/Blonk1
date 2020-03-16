@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import {Header,FloatingButton} from '@components';
+import {Header} from '@components';
 //import {FloatingAction} from 'react-native-floating-action';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome5';

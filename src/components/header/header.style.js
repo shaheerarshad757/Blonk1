@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
     shadowOffset: {height: 4},
     backgroundColor: '#FFFFFF',
     elevation: 5,
-    paddingBottom: 0,
-    //flex: 0.1,
   },
   headerRow: {
     flexDirection: 'row',
@@ -19,28 +17,22 @@ const styles = StyleSheet.create({
   },
   LeftLink: {
     marginLeft: 15,
-    //marginTop: 2,
-    // flex: 1,
     fontSize: 15,
     letterSpacing: 0.54,
     color: 'rgb(66,126,254)',
     textDecorationLine: 'underline',
-    //alignSelf:'flex-start',
   },
   headerTitle: {
     textAlign: 'center',
     fontWeight: 'bold',
-    //marginLeft: screenWidth / 2 - 120,
     marginTop: -2,
     fontSize: 18,
     letterSpacing: 1.5,
-    //flex: 1,
     color: 'rgb( 20, 20, 20)',
   },
   RightLink: {
     marginLeft: 0,
     marginTop: 0,
-    //flex: 1,
     fontSize: 15,
     letterSpacing: 0.54,
     color: 'rgb(66,126,254)',
@@ -50,7 +42,6 @@ const styles = StyleSheet.create({
   arrowDown: {
     marginLeft: 15,
     marginTop: -2,
-    //flex: 1,
   },
   lineSeparator: {
     borderColor: 'rgb(170 ,169, 169)',
@@ -60,8 +51,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 2,
     //elevation: 1,
-    marginTop: 0,
+    //marginTop: 10,
     flexDirection: 'row',
+    //marginBottom: 10,
   },
   lineSeparator1: {
     borderColor: 'rgb(170 ,169, 169)',
@@ -96,6 +88,16 @@ const styles = StyleSheet.create({
   },
   headerButtonsSpace: {
     marginLeft: 60,
+  },
+  selectedButton: {
+    borderColor: 'rgb(91, 192, 190)',
+    borderBottomWidth: 2.5,
+    // alignSelf: 'flex-end',
+  },
+  switchStyle: {
+    marginTop: 14,
+    marginHorizontal: 70,
+    //marginBottom: 20,
   },
 });
 
