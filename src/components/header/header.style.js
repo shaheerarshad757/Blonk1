@@ -3,11 +3,13 @@ const {width: screenWidth} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 18,
+    paddingTop: 27,
     shadowOpacity: 0.1,
     shadowOffset: {height: 4},
     backgroundColor: '#FFFFFF',
     elevation: 5,
+    paddingBottom: 0.
+    // flex: 10,
   },
   headerRow: {
     flexDirection: 'row',
@@ -29,6 +31,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     letterSpacing: 1.5,
     color: 'rgb( 20, 20, 20)',
+    marginBottom: 20,
+    // justifyContent:'flex-end'
+    backgroundColor: 'green',
+    // flex: 2,
+    //s
   },
   RightLink: {
     marginLeft: 0,
@@ -37,7 +44,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.54,
     color: 'rgb(66,126,254)',
     textDecorationLine: 'underline',
-    alignSelf:'flex-end',
+    alignSelf: 'flex-end',
   },
   arrowDown: {
     marginLeft: 15,
@@ -50,30 +57,17 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 0},
     shadowOpacity: 1,
     shadowRadius: 2,
+    // backgroundColor: 'green',
     //elevation: 1,
     //marginTop: 10,
     flexDirection: 'row',
-    //marginBottom: 10,
-  },
-  lineSeparator1: {
-    borderColor: 'rgb(170 ,169, 169)',
-    borderWidth: 0.38,
-    shadowColor: 'grey',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 1,
-    shadowRadius: 2,
-    elevation: 1,
-    marginTop: 10,
-    flexDirection: 'row',
-    //backgroundColor: 'yellow',
-    //flex: 1,
-    //backgroundColor: 'green',
+    // marginBottom: 20,
   },
   TopNavigator: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 10,
-    //backgroundColor: 'green'
+    // backgroundColor: 'green'
   },
   headerButtons: {
     borderColor: 'rgb(91, 192, 190)',
@@ -95,9 +89,10 @@ const styles = StyleSheet.create({
     // alignSelf: 'flex-end',
   },
   switchStyle: {
-    marginTop: 14,
+    // marginTop: 14,
+    // alignSelf: 'center',
     marginHorizontal: 70,
-    //marginBottom: 20,
+    // marginBottom: 20,
   },
 });
 

@@ -32,16 +32,19 @@ const Header: props => React$Node = props => {
             />
           </TouchableOpacity>
         ) : null}
+
         {props.leftLinkName ? (
           <TouchableOpacity
             onPress={() => props.onLeftLinkPress && props.onLeftLinkPress()}>
             <Text style={styles.LeftLink}>{props.leftLinkName}</Text>
           </TouchableOpacity>
         ) : null}
+
         <View style={{flex:0.5}}/>
         {props.title ? (
           <Text style={styles.headerTitle}>{props.title}</Text>
         ) : null}
+
         {props.titleDropDown ? (
           <TouchableOpacity
             onPress={() =>
@@ -57,6 +60,7 @@ const Header: props => React$Node = props => {
           </TouchableOpacity>
         ) : null}
         <View style={{flex:0.4}} />
+
         {props.RightLinkName ? (
           <TouchableOpacity
             onPress={() => props.onRightLinkPress && props.onRightLinkPress()}>
@@ -64,6 +68,7 @@ const Header: props => React$Node = props => {
           </TouchableOpacity>
         ) : null}
       </View>
+
       {props.TopNavigator ? (
         <View style={styles.switchStyle}>
           <SwitchSelector

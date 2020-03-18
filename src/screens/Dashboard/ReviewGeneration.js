@@ -160,10 +160,11 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     borderWidth: 0.4,
     shadowColor: 'grey',
-    //shadowOffset: {width: 1, height:1},
+    shadowOffset: {width: 1, height:1},
     shadowOpacity: 0.2,
     shadowRadius: 1,
     borderRadius: 20,
+    elevation: 0.0,
   },
   input: {
     marginLeft: 20,
