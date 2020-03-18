@@ -19,11 +19,16 @@ const Dashboard: props => React$Node = props => {
         title="Roxberry Juice"
         TopNavigator
       />
-      <ActionButton buttonColor="rgb(91, 192, 190)" size={60} spacing={10}>
+      <ActionButton
+        testID="button"
+        buttonColor="rgb(91, 192, 190)"
+        size={60}
+        spacing={10}>
         <ActionButton.Item
           buttonColor="rgb(91, 192, 190)"
           title="Upload Media"
           size={50}
+          testID="upload"
           onPress={() => props.navigation.navigate('UploadMedia')}>
           <Icon name="upload" style={styles.actionButtonIcon} />
         </ActionButton.Item>

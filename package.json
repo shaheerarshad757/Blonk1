@@ -43,6 +43,7 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/react-navigation": "^3.4.0",
     "babel-jest": "^24.9.0",
+    "detox": "^16.0.0",
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
@@ -50,5 +51,18 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/jump.app",
+        "build": "xcodebuild -workspace ios/jump.xcworkspace -scheme jump -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11"
+        }
+      }
+    },
+    "test-runner": "jest"
   }
 }

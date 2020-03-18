@@ -4,15 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.entria.views.RNViewOverflowPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -32,7 +28,6 @@ public class MainApplication extends Application implements ReactApplication {
           return packages;
         }
 
-
         @Override
         protected String getJSMainModuleName() {
           return "index";
@@ -43,17 +38,6 @@ public class MainApplication extends Application implements ReactApplication {
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
-
-  @Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.asList(
-            new MainReactPackage(),
-            new RNViewOverflowPackage(),
-            new RNDeviceInfo(),
-            new VectorIconsPackage(),
-            new ReactCheckBoxPackage()
-    );
-}
 
   @Override
   public void onCreate() {

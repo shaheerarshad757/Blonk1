@@ -30,10 +30,15 @@ const Login: props => React$Node = props => {
         <View style={styles.formContainer}>
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : null}>
-            <TextInput style={styles.Field} placeholder="Email" />
+            <TextInput
+              style={styles.Field}
+              placeholder="Email"
+              testID="email"
+            />
             <TextInput
               style={styles.FieldPassword}
               placeholder="Password"
+              testID="password"
               secureTextEntry
             />
           </KeyboardAvoidingView>
