@@ -30,10 +30,11 @@ const styles = StyleSheet.create({
     marginTop: -2,
     fontSize: 18,
     letterSpacing: 1.5,
+    // fontFamily: 'SF Pro Text Medium',
     color: 'rgb( 20, 20, 20)',
     marginBottom: 20,
     // justifyContent:'flex-end'
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     // flex: 2,
     //s
   },

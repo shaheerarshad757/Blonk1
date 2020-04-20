@@ -72,6 +72,18 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>SF Pro Text Medium.otf</string>
+		<string>SFProText-Bold.otf</string>
+		<string>SFProText-BoldItalic.otf</string>
+		<string>SFProText-Heavy.otf</string>
+		<string>SFProText-HeavyItalic.otf</string>
+		<string>SFProText-Light.otf</string>
+		<string>SFProText-LightItalic.otf</string>
+		<string>SFProText-MediumItalic.otf</string>
+		<string>SFProText-Regular.otf</string>
+		<string>SFProText-RegularItalic.otf</string>
+		<string>SFProText-Semibold.otf</string>
+		<string>SFProText-SemiboldItalic.otf</string>
 	</array>
 </dict>
 </plist>
