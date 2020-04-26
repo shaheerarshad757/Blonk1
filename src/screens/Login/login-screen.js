@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -9,11 +9,35 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import {conncect} from 'react-redux';
+import {emailChanged} from '../../redux/actions';
+import DeviceInfo from "react-native-device-info";
 import {BoxedCheckbox} from '@components';
 
 import styles from './login-screen.style';
 
 const Login: props => React$Node = props => {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
+  function submit(values) {
+    const {emails, passwords} = values;
+
+    const params = {
+      user: {
+        emails,
+        passwords,
+        // device_info: {
+        //   deviceId: DeviceInfo.getUniqueId(),
+        //   platform: Platform.OS,
+        // },
+      },
+      // schoolApiAccessToken: school.access_token,
+    };
+
+    props.requestLogin(params);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.form}>
@@ -34,12 +58,15 @@ const Login: props => React$Node = props => {
               style={styles.Field}
               placeholder="Email"
               testID="email"
+              value= {email}
+              onChangeText={newEmail => setEmail(newEmail)}
             />
             <TextInput
               style={styles.FieldPassword}
               placeholder="Password"
-              testID="password"
               secureTextEntry
+              value= {password}
+              onChangeText={newPassword => setPassword(newPassword)}
             />
           </KeyboardAvoidingView>
           <View style={styles.checkbox}>
