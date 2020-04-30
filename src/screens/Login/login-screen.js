@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 import {
   SafeAreaView,
   View,
@@ -9,34 +10,29 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import {conncect} from 'react-redux';
-import {emailChanged} from '../../redux/actions';
-import DeviceInfo from "react-native-device-info";
+import DeviceInfo from 'react-native-device-info';
 import {BoxedCheckbox} from '@components';
+import allActions from '../../redux//actions';
 
 import styles from './login-screen.style';
 
 const Login: props => React$Node = props => {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  // const newEmail = useSelector(state => state.newEmail)
 
-  function submit(values) {
-    const {emails, passwords} = values;
+  useEffect(() => {
 
-    const params = {
-      user: {
-        emails,
-        passwords,
-        // device_info: {
-        //   deviceId: DeviceInfo.getUniqueId(),
-        //   platform: Platform.OS,
-        // },
-      },
-      // schoolApiAccessToken: school.access_token,
-    };
+  }, [email, password]);
 
-    props.requestLogin(params);
-  }
+  const handleLogin = () => {
+    if (email === 'abc@email.com' && password === 'password') {
+      // setError(false);
+      alert('Login Successfully');
+    } else {
+      alert('loginFail')
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -78,7 +74,7 @@ const Login: props => React$Node = props => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('Dashboard');
+              handleLogin()
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>

@@ -1,14 +1,14 @@
-import React from "react";
-import "react-native-gesture-handler";
-import { Provider } from "react-redux";
-import {createStore} from 'redux';
-import reducers from '../src/redux/reducers';
+import React from 'react';
+import 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import store from '../src/redux/store';
+// import reducers from '../src/redux/reducers';
 
-import App from "./App";
+import App from './App';
 
 const AppContainer: () => React$Node = () => {
   return (
-    <Provider store={createStore(reducers)}>
+    <Provider store={store}>
       <App />
     </Provider>
   );
