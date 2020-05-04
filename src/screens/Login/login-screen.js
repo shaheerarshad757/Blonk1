@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
+import {connect} from 'react-redux';
 import {
   SafeAreaView,
   View,
@@ -12,27 +13,27 @@ import {
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {BoxedCheckbox} from '@components';
-import allActions from '../../redux//actions';
+import loginPressed from '../../redux//actions';
+import credentials from '../../redux/store/initial-state';
 
 import styles from './login-screen.style';
 
 const Login: props => React$Node = props => {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-  // const newEmail = useSelector(state => state.newEmail)
 
+  // const newEmail = useSelector(state => state.email)
+  //as you refered the user at the reducer
   useEffect(() => {
-
+    setEmail(email), setPassword(password);
+    console.log(email, password);
   }, [email, password]);
 
-  const handleLogin = () => {
-    if (email === 'abc@email.com' && password === 'password') {
-      // setError(false);
-      alert('Login Successfully');
-    } else {
-      alert('loginFail')
-    }
-  };
+  // const dispatch = useDispatch()
+  // loginPressed = email,password => {
+  //   dispatch(addItem(value))
+  // }
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -74,7 +75,7 @@ const Login: props => React$Node = props => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              handleLogin()
+              props.loginPressed(email, password);
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
@@ -93,4 +94,18 @@ const Login: props => React$Node = props => {
   );
 };
 
-export default Login;
+const mapStateToProps = state => {
+  return{
+    email: state.email,
+    password: state.password,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loginPressed: () => dispatch(loginPressed())
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
+// export default Login;

@@ -7,11 +7,13 @@
 //     },
 //   };
 // }
+// import {credentials} from '../store/initial-state';
+import {LOGIN} from './actionTypes';
 
-export const loginPressed = (email,password) => ({
-  type: 'LOGIN',
-  payload: {
-    email,
-    password,
-  }
+const loginPressed = (email,password) => ({
+  type: LOGIN,
+  payload: email,
+  password,
 });
+
+export default loginPressed;

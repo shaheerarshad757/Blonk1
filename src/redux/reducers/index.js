@@ -1,4 +1,4 @@
-import credentialsReducer from './currentUser';
+import credentialsReducer from './credentialsReducer';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({

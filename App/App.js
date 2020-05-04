@@ -3,7 +3,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import RootStack from '../src/screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 //import NavigationService from '@navigation/navigation-service';
 // import KeyboardManager from 'react-native-keyboard-manager';
 //
@@ -19,22 +19,22 @@ const App: () => React$Node = () => {
   );
 };
 
-function mapStateToProps(state) {
-  // const {
-  //   session: {user},
-  // } = state;
-  // let inboxChannel = user ? user.mobile_notification_channel : null;
+// function mapStateToProps(state) {
+//   // const {
+//   //   session: {user},
+//   // } = state;
+//   // let inboxChannel = user ? user.mobile_notification_channel : null;
+//
+//   return {
+//     // inboxChannel,
+//     // session: state.session,
+//   };
+// }
+//
+// const mapDispatchToProps = {
+//   // addConversationMessage: InboxCreators.addConversationMessage,
+//   // liveMessageReceived: InboxCreators.liveMessageReceived,
+//   // checkVersion: VersionCreators.checkVersion,
+// };
 
-  return {
-    // inboxChannel,
-    // session: state.session,
-  };
-}
-
-const mapDispatchToProps = {
-  // addConversationMessage: InboxCreators.addConversationMessage,
-  // liveMessageReceived: InboxCreators.liveMessageReceived,
-  // checkVersion: VersionCreators.checkVersion,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

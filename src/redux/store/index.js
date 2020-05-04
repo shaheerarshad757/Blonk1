@@ -1,8 +1,15 @@
+// import {createStore} from 'redux';
+// import currentUser from '../reducers';
+//
+// const rootReducer = () => {
+//   currentUser;
+// };
+//
+// export default rootReducer;
+
 import {createStore} from 'redux';
-import currentUser from '../reducers';
+import rootReducer from '../reducers';
 
-const rootReducer = () => {
-  currentUser;
-};
+const store = createStore(rootReducer);
 
-export default store = createStore(rootReducer)
+export default store;

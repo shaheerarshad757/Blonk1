@@ -1,7 +1,5 @@
 import loginPressed from './userActions';
 
-const allActions = {
-  loginPressed,
-};
+// const loginPressed,
 
-export default allActions;
+export default loginPressed;
