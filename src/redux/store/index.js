@@ -1,15 +1,28 @@
-// import {createStore} from 'redux';
-// import currentUser from '../reducers';
-//
-// const rootReducer = () => {
-//   currentUser;
-// };
-//
-// export default rootReducer;
-
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from '../reducers';
+import createSagaMiddleware from 'redux-saga';
+import {rootSaga} from '../sagas';
+// Logger with default options
+import logger from 'redux-logger';
 
-const store = createStore(rootReducer);
+// const sagaMiddleware = createSagaMiddleware()
+const middlewares = [];
+const sagaMiddleware = createSagaMiddleware();
+middlewares.push(sagaMiddleware);
+middlewares.push(logger);
+
+let store = createStore(rootReducer, compose(applyMiddleware(...middlewares)));
+
+// sagaMiddleware.run(rootSaga);
 
 export default store;
+
+// export default function configureStore(initialState) {
+//   let store = createStore(compose(applyMiddleware(...middlewares)),
+//     initialState,
+//   );
+//
+//   // global.store = store;
+//   // sagaMiddleware.run(rootSaga);
+//   return {store};
+// }

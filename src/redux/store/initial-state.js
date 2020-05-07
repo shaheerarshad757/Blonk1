@@ -1,6 +1,4 @@
 export default {
-  credentials: {
-    email: '',
-    password: '',
-  },
+  email: '',
+  password: '',
 };

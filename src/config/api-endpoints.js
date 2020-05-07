@@ -1,4 +1,5 @@
-export const Config = {
-  // API_URL: 'https://jsonplaceholder.typicode.com/users/',
-  API_URL: 'https://api.staging.jumpsoftware.com/v1/signin',
+const BASE_URL = "https://api.staging.jumpsoftware.com";
+
+export const API_ENDPOINTS = {
+  LOGIN: `${BASE_URL}/v1/signin`,
 };

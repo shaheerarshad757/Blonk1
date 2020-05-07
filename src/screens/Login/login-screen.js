@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
+// import {useSelector, useDispatch} from 'react-redux'
 import {connect} from 'react-redux';
 import {
   SafeAreaView,
@@ -11,29 +11,24 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
 import {BoxedCheckbox} from '@components';
-import loginPressed from '../../redux//actions';
+import loginPressed from '../../redux/actions';
 import credentials from '../../redux/store/initial-state';
 
 import styles from './login-screen.style';
 
 const Login: props => React$Node = props => {
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // const newEmail = useSelector(state => state.email)
-  //as you refered the user at the reducer
+  let params = {
+    email: email,
+    password: password,
+  };
   useEffect(() => {
-    setEmail(email), setPassword(password);
-    console.log(email, password);
+    // setEmail(email), setPassword(password);
+    // console.log(email, password);
   }, [email, password]);
-
-  // const dispatch = useDispatch()
-  // loginPressed = email,password => {
-  //   dispatch(addItem(value))
-  // }
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -55,14 +50,14 @@ const Login: props => React$Node = props => {
               style={styles.Field}
               placeholder="Email"
               testID="email"
-              value= {email}
+              value={email}
               onChangeText={newEmail => setEmail(newEmail)}
             />
             <TextInput
               style={styles.FieldPassword}
               placeholder="Password"
               secureTextEntry
-              value= {password}
+              value={password}
               onChangeText={newPassword => setPassword(newPassword)}
             />
           </KeyboardAvoidingView>
@@ -75,7 +70,7 @@ const Login: props => React$Node = props => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.loginPressed(email, password);
+              props.loginPressed(params);
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
@@ -95,17 +90,12 @@ const Login: props => React$Node = props => {
 };
 
 const mapStateToProps = state => {
-  return{
-    email: state.email,
-    password: state.password,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
   return {
-    loginPressed: () => dispatch(loginPressed())
-  }
-}
+    credentials: state.credentialsReducer.credentials,
+  };
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
-// export default Login;
+export default connect(
+  mapStateToProps,
+  {loginPressed},
+)(Login);

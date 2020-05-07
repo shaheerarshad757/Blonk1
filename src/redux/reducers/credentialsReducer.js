@@ -1,17 +1,12 @@
 import {LOGIN} from '../actions/actionTypes';
+import credentials from '../store/initial-state';
 
-const initialState = {
-  email: '',
-  password: '',
-};
-
-const credentialsReducer = (state = initialState, action) => {
+const credentialsReducer = (state = credentials, action) => {
   switch (action.type) {
     case LOGIN:
       return {
         ...state,
-        email: state.email,
-        password: state.password,
+        ...action.payload,
       };
     default:
       return state;
