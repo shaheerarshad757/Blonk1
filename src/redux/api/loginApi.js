@@ -1,3 +1,5 @@
+import HttpApiCallError from './HttpApiCallError';
+
 export async function login(email, password) {
 
   const url = 'https://api.staging.jumpsoftware.com/v1/signin';
@@ -22,5 +24,8 @@ export async function login(email, password) {
     return data;
   }
 
-  // throw - to be implemented
+  throw new HttpApiCallError(
+    data.message || response.statusText,
+    response.status
+  );
 }

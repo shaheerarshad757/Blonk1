@@ -12,16 +12,30 @@ import jwtDecode from 'jwt-decode';
 import {AsyncStorage} from 'react-native';
 
 export function* doLogin(action) {
-  const {email, password} = action.payload;
+  try {
+    const {email, password} = action.payload;
 
-  const responseBody = yield call(loginApi, email, password);
+    const responseBody = yield call(loginApi, email, password);
 
-  yield put({
-    type: LOGIN.LOGIN__SUCCEEDED,
-    payload: {
-      idToken: responseBody.token,
-    },
-  });
+    if (typeof responseBody.token === "undefined") {
+      throw new Error('Unable to find JWT in response body');
+    }
+
+    yield put({
+      type: LOGIN.LOGIN__SUCCEEDED,
+      payload: {
+        idToken: responseBody.token
+      }
+    });
+  } catch (e) {
+    yield put({
+      type: LOGIN.LOGIN__FAILED,
+      payload: {
+        message: e.message,
+        statusCode: e.statusCode
+      },
+    });
+  }
 }
 
 export function* watchLogin() {
