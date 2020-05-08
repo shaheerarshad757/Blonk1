@@ -16,13 +16,3 @@ let store = createStore(rootReducer, compose(applyMiddleware(...middlewares)));
 // sagaMiddleware.run(rootSaga);
 
 export default store;
-
-// export default function configureStore(initialState) {
-//   let store = createStore(compose(applyMiddleware(...middlewares)),
-//     initialState,
-//   );
-//
-//   // global.store = store;
-//   // sagaMiddleware.run(rootSaga);
-//   return {store};
-// }

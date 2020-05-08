@@ -1,9 +1,8 @@
 import {LOGIN} from './actionTypes';
 
-const loginPressed = (email,password) => ({
+const loginPressed = credentials => ({
   type: LOGIN,
-  payload: email,
-  password,
+  payload: credentials
 });
 
 export default loginPressed;

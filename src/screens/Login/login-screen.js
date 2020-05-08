@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-// import {useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {connect} from 'react-redux';
 import {
   SafeAreaView,
@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import {BoxedCheckbox} from '@components';
 import loginPressed from '../../redux/actions';
-import credentials from '../../redux/store/initial-state';
 
 import styles from './login-screen.style';
 
