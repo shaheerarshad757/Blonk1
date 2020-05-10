@@ -12,7 +12,7 @@ import {
   Platform,
 } from 'react-native';
 import {BoxedCheckbox} from '@components';
-import loginPressed from '../../redux/actions';
+import {loginPressed} from '../../redux/actions';
 
 import styles from './login-screen.style';
 
@@ -94,7 +94,11 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = {
+  loginPressed: loginPressed,
+};
+
 export default connect(
   mapStateToProps,
-  {loginPressed},
+  mapDispatchToProps,
 )(Login);

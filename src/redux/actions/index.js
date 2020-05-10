@@ -1,3 +1,1 @@
-import loginPressed from './userActions';
-
-export default loginPressed;
+export * from './userActions';
