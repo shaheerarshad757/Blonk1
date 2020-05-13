@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux'
 import {connect} from 'react-redux';
+import axios from 'axios';
 import {
   SafeAreaView,
   View,
@@ -25,8 +25,19 @@ const Login: props => React$Node = props => {
     password: password,
   };
   useEffect(() => {
-    // setEmail(email), setPassword(password);
-    // console.log(email, password);
+    // axios
+    //   .post('https://api.staging.jumpsoftware.com/v1/signin', {
+    //     email: email,
+    //     password: password,
+    //   })
+    //   .then(function(response) {
+    //     console.log(response);
+    //     console.log(email);
+    //     console.log(password);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
   }, [email, password]);
 
   return (
@@ -69,7 +80,20 @@ const Login: props => React$Node = props => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.loginPressed(params);
+              axios
+                .post('https://api.staging.jumpsoftware.com/v1/signin', {
+                  email: 'developerm216@gmail.com',
+                  password: 'Jump123456',
+                })
+                .then(function(response) {
+                  console.log(response);
+                  console.log(email);
+                  console.log(password);
+                })
+                .catch(function(error) {
+                  console.log(error);
+                });
+              // props.loginPressed(params);
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>

@@ -9,12 +9,27 @@ const credentialsReducer = (state = credentials, action) => {
         ...action.payload,
         loading: true,
       };
-    case LOGIN_SUCCESS: {
-      return {
-        ...state,
-        loading: false,
-      };
-    }
+    // case LOGIN_SUCCESS: {
+    //   console.log('Result', action.result.data);
+    //   return {
+    //     ...state,
+    //     email: action.result.data.email,
+    //     password: action.result.data.password,
+    //   };
+    //   // return {
+    //   //   ...state,
+    //   //   loading: false,
+    //   //   result: action.result,
+    //   //   error: null,
+    //   // };
+    // }
+    // case LOGIN_FAILURE: {
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     error: action.error,
+    //   };
+    // }
     default:
       return state;
   }

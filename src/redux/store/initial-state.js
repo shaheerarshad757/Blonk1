@@ -2,7 +2,7 @@ export default {
   email: '',
   password: '',
   token: null,
-  userId: null,
+  result: null,
   error: null,
   loading: false,
 };

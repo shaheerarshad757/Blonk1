@@ -1,6 +1,6 @@
-import {put, call, all} from 'redux-saga/effects';
+import {put, call, all, takeLatest, takeEvery} from 'redux-saga/effects';
 import AsyncStorage from '@react-native-community/async-storage';
-import {LOGIN_SUCCESS, LOGIN_FAILURE} from '../actions/actionTypes';
+import {LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE} from '../actions/actionTypes';
 
 const getUser = (email, password) => {
   return fetch('https://api.staging.jumpsoftware.com/v1/signin', {
@@ -20,9 +20,15 @@ function* loginFlow(action) {
   try {
     let email = action.email;
     let password = action.password;
+    // let email = 'developerm216@gmail.com';
+    // let password = 'Jump123456';
+    // console.log(email, password);
 
     const response = yield call(getUser, email, password);
+    console.log(`I called API with ${email} and ${password} = ${response}`);
+
     let token = response.headers.get('access-token');
+    console.log(`Maybe I got response ----->>>> ${token}`);
 
     const result = yield response.json();
 
@@ -38,10 +44,11 @@ function* loginFlow(action) {
     }
   } catch (e) {
     yield put({type: LOGIN_FAILURE, error: e.message});
+    console.log('UnSuccessful: NO TOKENNNNN.... ');
     console.log('error', e);
   }
 }
 
 export default function* rootSaga() {
-  yield all([loginFlow()]);
+  yield takeEvery(LOGIN, loginFlow);
 }
