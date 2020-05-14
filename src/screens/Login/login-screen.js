@@ -12,7 +12,12 @@ import {
   Platform,
 } from 'react-native';
 import {BoxedCheckbox} from '@components';
-import {loginPressed} from '../../redux/actions';
+import {
+  loginPressed,
+  setLoginSuccess,
+  setLoginError,
+} from '../../redux/actions';
+// import {authorization} from '../../redux/reducers';
 
 import styles from './login-screen.style';
 
@@ -23,6 +28,7 @@ const Login: props => React$Node = props => {
   let params = {
     email: email,
     password: password,
+    // token: token,
   };
   useEffect(() => {
     // axios
@@ -32,6 +38,8 @@ const Login: props => React$Node = props => {
     //   })
     //   .then(function(response) {
     //     console.log(response);
+    //     let token = response.data.token;
+    //     console.log(`this is token: ${token}`);
     //     console.log(email);
     //     console.log(password);
     //   })
@@ -82,18 +90,21 @@ const Login: props => React$Node = props => {
             onPress={() => {
               axios
                 .post('https://api.staging.jumpsoftware.com/v1/signin', {
-                  email: 'developerm216@gmail.com',
-                  password: 'Jump123456',
+                  email: email,
+                  password: password,
                 })
                 .then(function(response) {
-                  console.log(response);
                   console.log(email);
                   console.log(password);
+                  const token = response.data.token;
+                  props.setLoginSuccess(token);
+                  console.log(`this is token: ${token}`);
                 })
                 .catch(function(error) {
                   console.log(error);
+                  props.setLoginError(error);
                 });
-              // props.loginPressed(params);
+              props.loginPressed(params);
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
@@ -115,11 +126,14 @@ const Login: props => React$Node = props => {
 const mapStateToProps = state => {
   return {
     credentials: state.credentialsReducer.credentials,
+    token: state.credentialsReducer.token,
   };
 };
 
 const mapDispatchToProps = {
   loginPressed: loginPressed,
+  setLoginSuccess: setLoginSuccess,
+  setLoginError: setLoginError,
 };
 
 export default connect(
