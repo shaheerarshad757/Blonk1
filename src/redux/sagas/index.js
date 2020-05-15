@@ -1,42 +1,33 @@
-import {put, call, all, takeLatest, takeEvery} from 'redux-saga/effects';
+import {put, call, takeEvery, takeLatest} from 'redux-saga/effects';
+import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import {LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE} from '../actions/actionTypes';
+import {loginPressed} from '../actions';
 
 const getUser = (email, password) => {
-  return fetch('https://api.staging.jumpsoftware.com/v1/signin', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
+  return axios.post('https://api.staging.jumpsoftware.com/v1/signin', {
+    email: email,
+    password: password,
   });
 };
 
 function* loginFlow(action) {
   try {
-    let email = action.email;
-    let password = action.password;
-    // let email = 'developerm216@gmail.com';
-    // let password = 'Jump123456';
-    // console.log(email, password);
+    let email = action.payload.email;
+    let password = action.payload.password;
+    console.log(email, password);
+    console.log('I am called', action.payload);
 
     const response = yield call(getUser, email, password);
-    console.log(`I called API with ${email} and ${password} = ${response}`);
+    let token = response.data.token;
 
-    let token = response.headers.get('access-token');
-    console.log(`Maybe I got response ----->>>> ${token}`);
-
-    const result = yield response.json();
+    const result = yield response;
 
     if (token) {
       console.log('success: ', token);
       yield call(AsyncStorage.setItem, 'token', token);
 
-      yield put({type: LOGIN_SUCCESS, result});
+      yield put({type: LOGIN_SUCCESS, token});
     } else {
       if (result.error) {
         yield put({type: LOGIN_FAILURE, error: result.error});
@@ -44,11 +35,10 @@ function* loginFlow(action) {
     }
   } catch (e) {
     yield put({type: LOGIN_FAILURE, error: e.message});
-    console.log('UnSuccessful: NO TOKENNNNN.... ');
-    console.log('error', e);
+    console.log(e);
   }
 }
 
 export default function* rootSaga() {
-  yield takeEvery(LOGIN, loginFlow);
+  yield takeLatest(LOGIN, loginFlow);
 }

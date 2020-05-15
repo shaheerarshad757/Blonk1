@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE} from './actionTypes';
 
 export const loginPressed = (email, password) => ({
