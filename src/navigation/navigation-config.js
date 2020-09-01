@@ -1,4 +1,4 @@
-import { Animated, Easing } from "react-native";
+import {Animated, Easing} from 'react-native';
 
 const transitionConfig = () => ({
   transitionSpec: {

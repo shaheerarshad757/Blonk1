@@ -1,8 +1,7 @@
-import {put, call, takeEvery, takeLatest} from 'redux-saga/effects';
+import {put, call, takeLatest} from 'redux-saga/effects';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import {LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE} from '../actions/actionTypes';
-import {loginPressed} from '../actions';
 
 const getUser = (email, password) => {
   return axios.post('https://api.staging.jumpsoftware.com/v1/signin', {
@@ -16,7 +15,7 @@ function* loginFlow(action) {
     let email = action.payload.email;
     let password = action.payload.password;
     console.log(email, password);
-    console.log('I am called', action.payload);
+    console.log('I am action payload', action.payload);
 
     const response = yield call(getUser, email, password);
     let token = response.data.token;

@@ -1,5 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
-//const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
+const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -29,15 +29,7 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   buttonContainer: {
-    marginTop: 10,
-    height: 45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-    backgroundColor: '#00BFFF',
+    alignSelf: 'center',
   },
   profileName: {
     fontWeight: 'bold',
@@ -100,6 +92,23 @@ const styles = StyleSheet.create({
     margin: 10,
     color: 'rgb(102,102,102)',
     fontStyle: 'italic',
+  },
+  button: {
+    backgroundColor: 'rgb( 91 ,192, 190)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 49,
+    width: screenWidth - 60,
+    height: 50,
+    marginLeft: 9,
+    marginTop: '2%',
+  },
+  buttonText: {
+    color: 'white',
+    letterSpacing: 2.25,
+    fontWeight: 'bold',
+    fontSize: 18,
+    textAlign: 'center',
   },
 });
 

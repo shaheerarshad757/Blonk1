@@ -32,13 +32,16 @@ const ResetPassword: () => React$Node = props => {
       <View style={styles.formTopSpace} />
 
       <View style={styles.formContainer}>
+        <TextInput style={styles.Field} placeholder="User Name"/>
         <TextInput style={styles.Field} placeholder="Email" />
+        <TextInput style={styles.Field} placeholder="Password" />
+
         <TouchableOpacity
           onPress={() => {
             props.navigation.navigate('Login');
           }}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Send Reset Email</Text>
+            <Text style={styles.buttonText}>Register</Text>
           </View>
         </TouchableOpacity>
       </View>

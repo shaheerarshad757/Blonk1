@@ -1,61 +1,166 @@
-import React from 'react';
-import {SafeAreaView} from 'react-native';
-import {Header} from '@components';
-//import {FloatingAction} from 'react-native-floating-action';
-import ActionButton from 'react-native-action-button';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-//import Post from './Post';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React, { Component } from 'react';
 
-import styles from './Dashboard.style';
+import { StyleSheet, FlatList, Text, View, Alert, TouchableOpacity, TextInput } from 'react-native';
 
-const Dashboard: props => React$Node = props => {
-  return (
-    <SafeAreaView style={styles.safeAreaContainer}>
-      <Header
-        leftIconName={'bars'}
-        onLeftButtonPress={() => props.navigation.navigate('DrawerNavigation')}
-        titleDropDown
-        title="Roxberry Juice"
-        TopNavigator
+export default class Dashboard extends Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.array = [{
+      title: 'Java'
+    },
+    {
+      title: 'React'
+    },
+    {
+      title: 'Python'
+    },
+    {
+      title: 'C++'
+    },
+    {
+      title: 'Angular'
+    }
+    ],
+
+      this.state = {
+
+        arrayHolder: [],
+
+        textInput_Holder: ''
+
+      }
+
+  }
+
+  componentDidMount() {
+
+    this.setState({ arrayHolder: [...this.array] })
+
+  }
+
+
+  joinData = () => {
+
+    this.array.push({title : this.state.textInput_Holder});
+
+    this.setState({ arrayHolder: [...this.array] })
+
+  }
+  gotoProfile = () => {
+
+    this.props.navigation.navigate("Insights")
+
+  }
+
+  FlatListItemSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: "100%",
+          backgroundColor: "#607D8B",
+        }}
       />
-      <ActionButton
-        testID="button"
-        buttonColor="rgb(91, 192, 190)"
-        size={60}
-        spacing={10}>
-        <ActionButton.Item
-          buttonColor="rgb(91, 192, 190)"
-          title="Upload Media"
-          size={50}
-          testID="upload"
-          onPress={() => props.navigation.navigate('UploadMedia')}>
-          <Icon name="upload" style={styles.actionButtonIcon} />
-        </ActionButton.Item>
-        <ActionButton.Item
-          buttonColor="rgb(91, 192, 190)"
-          title="Edit Listing"
-          size={50}
-          onPress={() => props.navigation.navigate('EditListing')}>
-          <Icon name="pen" style={styles.actionButtonIcon} />
-        </ActionButton.Item>
-        <ActionButton.Item
-          buttonColor="rgb(91, 192, 190)"
-          title="Review Generation"
-          size={50}
-          onPress={() => props.navigation.navigate('ReviewGeneration')}>
-          <Icon name="paper-plane" style={styles.actionButtonIcon} />
-        </ActionButton.Item>
-        <ActionButton.Item
-          buttonColor="rgb(91, 192, 190)"
-          title="Create a Post"
-          size={50}
-          onPress={() => props.navigation.navigate('Post')}>
-          <Icon name="edit" style={styles.actionButtonIcon} />
-        </ActionButton.Item>
-      </ActionButton>
-    </SafeAreaView>
-  );
-};
+    );
+  }
 
-export default Dashboard;
+  GetItem(item) {
+
+    Alert.alert(item);
+
+  }
+
+
+  render() {
+    return (
+
+      <View style={styles.MainContainer}>
+      <TouchableOpacity onPress={this.gotoProfile} activeOpacity={0.7} style={styles.button} >
+
+        <Text style={styles.buttonText}> View Profile </Text>
+
+      </TouchableOpacity>
+
+        <TextInput
+          placeholder="Enter Here ..."
+          onChangeText={data => this.setState({ textInput_Holder: data })}
+          style={styles.textInputStyle}
+          underlineColorAndroid='transparent'
+        />
+
+        <TouchableOpacity onPress={this.joinData} activeOpacity={0.7} style={styles.button} >
+
+          <Text style={styles.buttonText}> Add Jobs To List </Text>
+
+        </TouchableOpacity>
+
+        <FlatList
+
+          data={this.state.arrayHolder}
+
+          width='100%'
+
+          extraData={this.state.arrayHolder}
+
+          keyExtractor={(index) => index.toString()}
+
+          ItemSeparatorComponent={this.FlatListItemSeparator}
+
+          renderItem={({ item }) => <Text style={styles.item} onPress={this.GetItem.bind(this, item.title)} > {item.title} </Text>}
+        />
+
+
+      </View>
+
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+
+  MainContainer: {
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    margin: 2,
+    marginTop:50,
+
+  },
+
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
+
+  textInputStyle: {
+
+    textAlign: 'center',
+    height: 40,
+    width: '90%',
+    borderWidth: 1,
+    borderColor: 'rgb( 91 ,192, 190)',
+    borderRadius: 7,
+    marginTop: 12
+  },
+
+  button: {
+
+    width: '90%',
+    height: 40,
+    padding: 10,
+    backgroundColor: 'rgb( 91 ,192, 190)',
+    borderRadius: 8,
+    marginTop: 10
+  },
+
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+  },
+
+});

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   Field: {
-    height: '20%',
+    height: '11%',
     width: screenWidth - 70,
     padding: 10,
     paddingLeft: 24,

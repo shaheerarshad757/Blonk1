@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {
   SafeAreaView,
@@ -23,7 +23,8 @@ const Login: props => React$Node = props => {
     email: email,
     password: password,
   };
-  useEffect(() => {}, [email, password]);
+
+  // let value = props.obj;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,16 +57,16 @@ const Login: props => React$Node = props => {
               onChangeText={newPassword => setPassword(newPassword)}
             />
           </KeyboardAvoidingView>
-          <View style={styles.checkbox}>
-            <BoxedCheckbox
-              label="Remember Me "
-              isChecked={false}
-              onToggle={() => {}}
-            />
-          </View>
           <TouchableOpacity
             onPress={() => {
-              props.loginPressed(params);
+              // props.loginPressed(params);
+              if(email.toLowerCase() == 'admin' && password.toLowerCase() == 'admin'){
+              props.navigation.navigate('Dashboard');
+            }
+            else{
+              alert("Email or Password Incorrect")
+
+            }
             }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
@@ -75,7 +76,7 @@ const Login: props => React$Node = props => {
             onPress={() => {
               props.navigation.navigate('ResetPassword');
             }}>
-            <Text style={styles.linkStyle}>Forgot Password ? </Text>
+            <Text style={styles.linkStyle}>New user ? Register yourself </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.bottomSpace} />
@@ -87,7 +88,6 @@ const Login: props => React$Node = props => {
 const mapStateToProps = state => {
   return {
     credentials: state.credentialsReducer.credentials,
-    token: state.credentialsReducer.token,
   };
 };
 

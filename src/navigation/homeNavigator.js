@@ -1,18 +1,17 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {createDrawerNavigator} from 'react-navigation-drawer';
 import {TabBarIcon} from '@components';
 import Dashboard from '../screens/Dashboard/Dashboard';
-import Post from '../screens/Dashboard/Post';
-import ReviewGeneration from '../screens/Dashboard/ReviewGeneration';
-import EditListing from '../screens/Dashboard/EditListing';
-import UploadMedia from '../screens/Dashboard/uploadMedia';
+// import Post from '../screens/Dashboard/Post';
+// import ReviewGeneration from '../screens/Dashboard/ReviewGeneration';
+// import EditListing from '../screens/Dashboard/EditListing';
+// import UploadMedia from '../screens/Dashboard/uploadMedia';
 import Insights from '../screens/Insights/Insights';
-import Reviews from '../screens/Reviews/Reviews';
-import Social from '../screens/Social/Social';
-import About from '../screens/About';
-import Home from '../screens/Home';
+// import Reviews from '../screens/Reviews/Reviews';
+// import Social from '../screens/Social/Social';
+// import About from '../screens/About';
+// import Home from '../screens/Home';
 
 const HomeNavigator = createBottomTabNavigator(
   {
@@ -28,18 +27,7 @@ const HomeNavigator = createBottomTabNavigator(
         tabBarIcon: props => <TabBarIcon {...props} name="insights" />,
       },
     },
-    Reviews: {
-      screen: Reviews,
-      navigationOptions: {
-        tabBarIcon: props => <TabBarIcon {...props} name="reviews" />,
-      },
-    },
-    Social: {
-      screen: Social,
-      navigationOptions: {
-        tabBarIcon: props => <TabBarIcon {...props} name="social" />,
-      },
-    },
+  
   },
   {
     tabBarOptions: {
@@ -58,28 +46,16 @@ const HomeNavigator = createBottomTabNavigator(
   },
 );
 
-const DrawerNavigation = createDrawerNavigator(
-  {
-    HomeScreen: Home,
-    AboutScreen: About,
-  },
-  {},
-  // {
-  //   //For the Custom sidebar menu we have to provide our CustomSidebarMenu
-  // contentComponent: CustomSidebarMenu,
-  //   //Sidebar width
-  //   drawerWidth: 300,
-  // },
-);
+
 
 const HomeStackNavigator = createStackNavigator(
   {
-    HomeStack: {screen: HomeNavigator},
-    Drawer: {screen: DrawerNavigation},
-    Post: {screen: Post},
-    ReviewGeneration: {screen: ReviewGeneration},
-    EditListing: {screen: EditListing},
-    UploadMedia: {screen: UploadMedia},
+    HomeStack: {screen: Dashboard},
+    //Drawer: {screen: DrawerNavigation},
+    // Post: {screen: Post},
+    // ReviewGeneration: {screen: ReviewGeneration},
+    // EditListing: {screen: EditListing},
+    // UploadMedia: {screen: UploadMedia},
   },
   {
     initialRouteName: 'HomeStack',

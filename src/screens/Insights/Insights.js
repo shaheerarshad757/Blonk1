@@ -9,20 +9,17 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import ActionButton from 'react-native-action-button';
-import {Header, Card} from '@components';
+import {Login} from '../Login/login-screen';
+import {Card} from '@components';
 import styles from './Insights.style';
 
 export default class Home extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Header
-          title="Roxberry Juice"
-          titleDropDown
-          leftIconName="bars"
-          TopNavigator
-        />
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Dashboard')}>
+          <Text style={styles.options}> {'<<<'} Back </Text>
+        </TouchableOpacity>
         <ScrollView>
           <Card style={styles.cardStyle}>
             <Image
@@ -103,80 +100,16 @@ export default class Home extends Component {
               </View>
             </View>
           </Card>
-
-          <Card style={styles.cardStyle}>
-            <Text style={styles.sectionHeading}>About</Text>
-            <View style={styles.scheduleView}>
-              <Icon
-                name={'envelope'}
-                size={15}
-                color={'rgb( 20, 20, 20)'}
-                style={styles.links}
-              />
-              <Text style={styles.schedule}>Sunday</Text>
-              <Text style={styles.schedule}>8:00 a.m. - 10 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Monday</Text>
-
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Tuesday</Text>
-
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Wednesday</Text>
-
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Thursday</Text>
-
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Friday</Text>
-
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <View style={styles.weekDays}>
-              <Text style={styles.schedule}>Saturday</Text>
-              <Text style={styles.schedule}>8:00 a..m. to 10:00 p.m.</Text>
-            </View>
-            <Text style={styles.note}>Close on Bank Holidays</Text>
-          </Card>
-          <ActionButton buttonColor="rgb(91, 192, 190)" size={60} spacing={10}>
-            <ActionButton.Item
-              buttonColor="rgb(91, 192, 190)"
-              title="Upload Media"
-              size={50}
-              onPress={() => props.navigation.navigate('UploadMedia')}>
-              <Icon name="upload" style={styles.actionButtonIcon} />
-            </ActionButton.Item>
-            <ActionButton.Item
-              buttonColor="rgb(91, 192, 190)"
-              title="Edit Listing"
-              size={50}
-              onPress={() => props.navigation.navigate('EditListing')}>
-              <Icon name="pen" style={styles.actionButtonIcon} />
-            </ActionButton.Item>
-            <ActionButton.Item
-              buttonColor="rgb(91, 192, 190)"
-              title="Review Generation"
-              size={50}
-              onPress={() => props.navigation.navigate('ReviewGeneration')}>
-              <Icon name="paper-plane" style={styles.actionButtonIcon} />
-            </ActionButton.Item>
-            <ActionButton.Item
-              buttonColor="rgb(91, 192, 190)"
-              title="Create a Post"
-              size={50}
-              onPress={() => props.navigation.navigate('Post')}>
-              <Icon name="edit" style={styles.actionButtonIcon} />
-            </ActionButton.Item>
-          </ActionButton>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.navigate('Login');
+              }}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Logout</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
       </SafeAreaView>
     );

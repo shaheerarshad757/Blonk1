@@ -6,7 +6,7 @@ const credentialsReducer = (state = credentials, action) => {
     case LOGIN:
       return {
         ...state,
-        ...action.payload,
+        // ...action.payload,
         loading: true,
       };
     case LOGIN_SUCCESS:

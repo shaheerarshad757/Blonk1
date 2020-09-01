@@ -1,19 +1,29 @@
-import About from '../screens/About';
-import Home from '../screens/Home';
-// import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import {createDrawerNavigator} from 'react-navigation-drawer';
+import {createStackNavigator} from 'react-navigation-stack';
+// import { TransitionSpecs } from '@react-navigation/stack';
+import Insights from '../screens/Insights/Insights';
+import Dashboard from '../screens/Dashboard/Dashboard';
 
-const DrawerNavigation = createDrawerNavigator(
+const DashboardStack = createStackNavigator(
   {
-    HomeScreen: Home,
-    AboutScreen: About,
+    Dashboard: {screen: Dashboard},
+    Insights: {screen: Insights},
   },
   {
-    initialRouteName: 'HomeScreen',
-    contentOptions: {
-      activeTintColor: 'red',
+    initialRouteName: 'Dashboard',
+    headerMode: 'none',
+    defaultNavigationOptions: {
+      // cardStyle: {
+      //   backgroundColor: 'transparent',
+      //   cardOverlayEnabled: 'false',
+      // },
     },
   },
 );
 
-export {DrawerNavigation};
+DashboardStack.navigationOptions = {
+  cardStyle: {
+    backgroundColor: 'transparent',
+  },
+};
+
+export {DashboardStack};
